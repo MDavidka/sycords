@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-export default function PlantShop() {
+export default function PlantCareGuides() {
   return (
     
   )

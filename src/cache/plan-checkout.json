@@ -1,0 +1,18 @@
+{
+  "path": "/checkout",
+  "name": "Checkout",
+  "title": "Checkout",
+  "description": "Complete your order with shipping, payment, and order review",
+  "components": [
+    "checkout-form",
+    "order-summary",
+    "payment-methods",
+    "shipping-options"
+  ],
+  "navLinks": [
+    {
+      "path": "/cart",
+      "label": "Back to Cart"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "path": "/shop",
+  "name": "Shop",
+  "title": "Plant Shop",
+  "description": "Browse our collection of indoor and outdoor plants with filters and search",
+  "components": [
+    "shop-header",
+    "filters-sidebar",
+    "product-grid",
+    "pagination",
+    "sort-selector"
+  ],
+  "navLinks": [
+    {
+      "path": "/",
+      "label": "Home"
+    },
+    {
+      "path": "/shop/indoor",
+      "label": "Indoor"
+    },
+    {
+      "path": "/shop/outdoor",
+      "label": "Outdoor"
+    },
+    {
+      "path": "/cart",
+      "label": "Cart"
+    }
+  ]
+}

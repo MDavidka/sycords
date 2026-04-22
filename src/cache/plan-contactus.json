@@ -1,0 +1,23 @@
+{
+  "path": "/contact",
+  "name": "Contact",
+  "title": "Contact Us",
+  "description": "Get in touch with our plant experts",
+  "components": [
+    "contact-hero",
+    "contact-form",
+    "contact-info",
+    "faq-section",
+    "store-locator"
+  ],
+  "navLinks": [
+    {
+      "path": "/",
+      "label": "Home"
+    },
+    {
+      "path": "/about",
+      "label": "About"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "path": "/product/:id",
+  "name": "Product Detail",
+  "title": "Plant Product Page",
+  "description": "Individual plant product with details, care instructions, and add to cart",
+  "components": [
+    "product-hero",
+    "product-details",
+    "care-instructions",
+    "related-products",
+    "reviews-section"
+  ],
+  "navLinks": [
+    {
+      "path": "/shop",
+      "label": "Back to Shop"
+    },
+    {
+      "path": "/cart",
+      "label": "View Cart"
+    }
+  ]
+}

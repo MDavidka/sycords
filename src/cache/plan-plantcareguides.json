@@ -1,0 +1,30 @@
+{
+  "path": "/care",
+  "name": "Plant Care",
+  "title": "Plant Care Guides",
+  "description": "Comprehensive care instructions for all types of plants",
+  "components": [
+    "care-hero",
+    "care-categories",
+    "featured-guides",
+    "care-tips-grid"
+  ],
+  "navLinks": [
+    {
+      "path": "/",
+      "label": "Home"
+    },
+    {
+      "path": "/care/indoor",
+      "label": "Indoor Care"
+    },
+    {
+      "path": "/care/outdoor",
+      "label": "Outdoor Care"
+    },
+    {
+      "path": "/care/watering",
+      "label": "Watering Guide"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "path": "/about",
+  "name": "About Us",
+  "title": "About Plant Paradise",
+  "description": "Our story, mission, and commitment to healthy plants",
+  "components": [
+    "about-hero",
+    "our-story",
+    "team-section",
+    "sustainability",
+    "values-grid"
+  ],
+  "navLinks": [
+    {
+      "path": "/",
+      "label": "Home"
+    },
+    {
+      "path": "/shop",
+      "label": "Shop"
+    },
+    {
+      "path": "/contact",
+      "label": "Contact"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "path": "/cart",
+  "name": "Shopping Cart",
+  "title": "Your Cart",
+  "description": "Review items, update quantities, and proceed to checkout",
+  "components": [
+    "cart-table",
+    "order-summary",
+    "promo-code",
+    "checkout-cta"
+  ],
+  "navLinks": [
+    {
+      "path": "/",
+      "label": "Continue Shopping"
+    },
+    {
+      "path": "/checkout",
+      "label": "Checkout"
+    }
+  ]
+}
