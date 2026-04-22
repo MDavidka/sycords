@@ -1,0 +1,27 @@
+{
+  "path": "/collections/:category",
+  "name": "Collection",
+  "title": "Flower Collection",
+  "description": "Curated flower collections for special occasions",
+  "components": [
+    {
+      "type": "breadcrumbs",
+      "items": [
+        "Home",
+        "Collections",
+        "Category Name"
+      ]
+    },
+    {
+      "type": "category-hero",
+      "title": "Roses Collection",
+      "subtitle": "The classic symbol of love and appreciation",
+      "image": "/roses-hero.jpg"
+    },
+    {
+      "type": "product-grid",
+      "title": "Featured Roses",
+      "products": []
+    }
+  ]
+}

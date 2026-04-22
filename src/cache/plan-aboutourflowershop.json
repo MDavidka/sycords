@@ -1,0 +1,33 @@
+{
+  "path": "/about",
+  "name": "About",
+  "title": "About Our Flower Shop",
+  "description": "Learn about our family-owned flower shop and commitment to quality",
+  "components": [
+    {
+      "type": "about-hero",
+      "title": "Family Owned Since 1985",
+      "subtitle": "Three generations of floral excellence"
+    },
+    {
+      "type": "story-section",
+      "title": "Our Story",
+      "content": "paragraphs about history, values, sourcing"
+    },
+    {
+      "type": "team-section",
+      "title": "Meet Our Florists",
+      "team": []
+    },
+    {
+      "type": "quality-section",
+      "title": "Why Choose Us",
+      "features": [
+        "Farm-fresh daily",
+        "Same-day delivery",
+        "100% satisfaction guarantee",
+        "Local family business"
+      ]
+    }
+  ]
+}

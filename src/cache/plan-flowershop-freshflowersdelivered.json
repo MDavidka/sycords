@@ -1,0 +1,68 @@
+{
+  "path": "/",
+  "name": "Home",
+  "title": "Flower Shop - Fresh Flowers Delivered",
+  "description": "Discover beautiful fresh flowers for every occasion. Same-day delivery available.",
+  "components": [
+    {
+      "type": "hero",
+      "headline": "Fresh Flowers for Every Moment",
+      "subheadline": "Handcrafted bouquets delivered same day in your area",
+      "ctaPrimary": "Shop Now",
+      "ctaSecondary": "View Collections",
+      "image": "/hero-flower.jpg"
+    },
+    {
+      "type": "featured-collections",
+      "title": "Popular Collections",
+      "items": [
+        {
+          "name": "Roses",
+          "image": "/roses.jpg",
+          "path": "/collections/roses"
+        },
+        {
+          "name": "Birthday",
+          "image": "/birthday.jpg",
+          "path": "/collections/birthday"
+        },
+        {
+          "name": "Anniversary",
+          "image": "/anniversary.jpg",
+          "path": "/collections/anniversary"
+        },
+        {
+          "name": "Get Well",
+          "image": "/getwell.jpg",
+          "path": "/collections/get-well"
+        }
+      ]
+    },
+    {
+      "type": "categories",
+      "title": "Shop by Occasion",
+      "items": [
+        {
+          "name": "Wedding",
+          "image": "/wedding.jpg",
+          "path": "/collections/wedding"
+        },
+        {
+          "name": "Sympathy",
+          "image": "/sympathy.jpg",
+          "path": "/collections/sympathy"
+        },
+        {
+          "name": "New Baby",
+          "image": "/newbaby.jpg",
+          "path": "/collections/new-baby"
+        },
+        {
+          "name": "Just Because",
+          "image": "/justbecause.jpg",
+          "path": "/collections/just-because"
+        }
+      ]
+    }
+  ]
+}

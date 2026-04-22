@@ -1,0 +1,49 @@
+{
+  "path": "/delivery",
+  "name": "Delivery Info",
+  "title": "Delivery Information - Flower Shop",
+  "description": "Same-day delivery areas, times, and policies",
+  "components": [
+    {
+      "type": "delivery-hero",
+      "title": "Fast & Reliable Delivery",
+      "subtitle": "Same-day delivery 7 days a week"
+    },
+    {
+      "type": "delivery-areas",
+      "title": "Our Delivery Zones",
+      "areas": [
+        {
+          "name": "Downtown",
+          "fee": "$5",
+          "time": "Same Day"
+        },
+        {
+          "name": "Suburbs",
+          "fee": "$8",
+          "time": "Same Day"
+        },
+        {
+          "name": "Outlying",
+          "fee": "$12",
+          "time": "Next Day"
+        }
+      ]
+    },
+    {
+      "type": "delivery-schedule",
+      "title": "Delivery Schedule",
+      "table": true
+    },
+    {
+      "type": "faq-section",
+      "title": "Frequently Asked Questions",
+      "items": [
+        "What time do you deliver?",
+        "Can I schedule future delivery?",
+        "What if I'm not home?",
+        "Do you deliver on holidays?"
+      ]
+    }
+  ]
+}
