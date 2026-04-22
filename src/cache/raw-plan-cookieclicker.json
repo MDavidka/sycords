@@ -1,0 +1,52 @@
+{
+  "path": "/",
+  "title": "Cookie Clicker",
+  "structure": {
+    "name": "div",
+    "props": {
+      "className": "min-h-screen flex flex-col items-center justify-center bg-background text-foreground"
+    },
+    "children": [
+      {
+        "name": "h1",
+        "props": {
+          "className": "text-4xl font-bold mb-4"
+        },
+        "text": "Cookie Clicker"
+      },
+      {
+        "name": "div",
+        "props": {
+          "className": "flex flex-col items-center space-y-4"
+        },
+        "children": [
+          {
+            "name": "Button",
+            "props": {
+              "variant": "default",
+              "size": "lg",
+              "onClick": "$handler.incrementCookie"
+            },
+            "text": "🍪"
+          },
+          {
+            "name": "p",
+            "props": {
+              "className": "text-xl"
+            },
+            "text": "$state.cookieCount"
+          },
+          {
+            "name": "Button",
+            "props": {
+              "variant": "outline",
+              "size": "sm",
+              "onClick": "$handler.openSettings"
+            },
+            "text": "Settings"
+          }
+        ]
+      }
+    ]
+  }
+}
