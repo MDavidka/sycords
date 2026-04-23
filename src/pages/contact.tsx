@@ -2,101 +2,118 @@
 
 import React from 'react'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { Separator } from '@/components/ui/separator'
 import { Textarea } from '@/components/ui/textarea'
+import { onSubmit } from '@/lib/contact-logic'
 
-interface Props {
-  setName: (value: string) => void
-  setEmail: (value: string) => void
-  setMessage: (value: unknown) => void
-}
-
-export function Contact({ setName, setEmail, setMessage }: Props) {
+export function Contact() {
   const [name, setName] = React.useState('')
   const [email, setEmail] = React.useState('')
-  const [message, setMessage] = React.useState(undefined)
-  const [submitting, setSubmitting] = React.useState(undefined)
+  const [message, setMessage] = React.useState('')
+  const [orderDetails, setOrderDetails] = React.useState('')
+  const [submitting, setSubmitting] = React.useState('')
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-rose-50 dark:from-slate-900 dark:to-slate-800 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-        <Card className="w-full shadow-xl border-0 bg-white/80 backdrop-blur-sm dark:bg-slate-800/80">
-          <CardHeader className="text-center sm:text-left">
-            <CardTitle className="text-3xl font-bold bg-gradient-to-r from-rose-600 to-pink-600 bg-clip-text text-transparent">Visit Our Flower Shop</CardTitle>
-            <CardDescription className="text-lg mt-2">Come see our beautiful arrangements in person</CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-6">
-            <div className="space-y-4">
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl flex items-center justify-center flex-shrink-0">
-                  <span className="text-2xl">📍</span>
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 to-rose-50 dark:from-slate-900 dark:to-slate-800 py-12 px-4 md:px-8">
+      <div className="max-w-6xl mx-auto space-y-12">
+        <div className="text-center space-y-4">
+          <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-rose-600 to-pink-600 bg-clip-text text-transparent">Contact Us</h1>
+          <p className="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">Have questions about custom orders, floral arrangements, or want to visit our shop? We're here to help!</p>
+        </div>
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          <Card className="w-full">
+            <CardHeader >
+              <CardTitle >Send us a message</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <form className="space-y-6">
+                <div className="space-y-2">
+                  <Label htmlFor="name">Full Name</Label>
+                  <Input id="name" placeholder="John Doe" value={name} onChange={setName} />
                 </div>
-                <div>
-                  <h3 className="font-semibold text-lg">Store Location</h3>
-                  <p className="text-sm text-muted-foreground mt-1">123 Blossom Street
-Flower District, FL 12345</p>
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email</Label>
+                  <Input id="email" type="email" placeholder="john@example.com" value={email} onChange={setEmail} />
                 </div>
+                <div className="space-y-2">
+                  <Label htmlFor="message">Message</Label>
+                  <Textarea id="message" placeholder="Tell us about your inquiry or custom order..." value={message} onChange={setMessage} rows={5} />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="orderDetails">Order Details (optional)</Label>
+                  <Textarea id="orderDetails" placeholder="Special instructions, delivery date, bouquet preferences..." value={orderDetails} onChange={setOrderDetails} rows={3} />
+                </div>
+                <Button type="submit" className="w-full" disabled={submitting} onClick={onSubmit}>$state.submitting ? 'Sending...' : 'Send Message'</Button>
+              </form>
+              <div className="pt-4">
+                <div className="$state.submitStatus === 'success' ? 'text-green-600 bg-green-50 border border-green-200 dark:bg-green-950 dark:border-green-800' : 'text-red-600 bg-red-50 border border-red-200 dark:bg-red-950 dark:border-red-800'">$state.submitStatus === 'success' ? 'Message sent successfully! We'll get back to you within 24 hours.' : $state.submitStatus === 'error' ? 'Failed to send message. Please try again.' : ''</div>
               </div>
-              <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-2xl flex items-center justify-center flex-shrink-0">
-                  <span className="text-2xl">📞</span>
+            </CardContent>
+          </Card>
+          <div className="space-y-8">
+            <Card >
+              <CardHeader>
+                <CardTitle>Visit Us</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="space-y-2">
+                  <div className="font-semibold text-rose-600">Blossom Haven Florist</div>
+                  <p>123 Flower Street, Floral Park, CA 90210</p>
+                  <p className="text-sm text-slate-500">Free parking available</p>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-lg">Contact</h3>
-                  <p className="text-sm text-muted-foreground mt-1">(555) 123-FLOW
-hello@blossomshop.com</p>
+                <div className="space-y-2">
+                  <div className="font-semibold text-rose-600">📞 (555) 123-FLOWERS</div>
+                  <p className="text-sm">Mon-Fri 9AM-6PM | Sat 10AM-4PM</p>
                 </div>
-              </div>
-              <div className="flex items-start space-x-4 pt-2">
-                <div className="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center flex-shrink-0">
-                  <span className="text-2xl">🕒</span>
+                <div className="aspect-video rounded-lg overflow-hidden border">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.614715140907!2d-118.243683!3d34.052235!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDAzJzExLjkiTiAxMTTCsDE0JzM3LjIiVw!5e0!3m2!1sen!2sus!4v1690000000000" width="100%" height="100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" />
                 </div>
-                <div>
-                  <h3 className="font-semibold text-lg">Hours</h3>
-                  <p className="text-sm text-muted-foreground mt-1 space-y-1">
-                    <span>Mon-Fri: 9AM - 7PM
-</span>
-                    <span>Sat: 10AM - 6PM
-</span>
-                    <span>Sun: 11AM - 5PM</span>
-                  </p>
+              </CardContent>
+            </Card>
+            <Card >
+              <CardHeader>
+                <CardTitle>Hours</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-2">
+                  <div className="flex justify-between font-medium">
+                    <span>Monday - Friday</span>
+                    <span className="text-rose-600 font-semibold">9:00 AM - 6:00 PM</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Saturday</span>
+                    <span className="text-rose-600 font-semibold">10:00 AM - 4:00 PM</span>
+                  </div>
+                  <div className="flex justify-between pt-2 border-t">
+                    <span className="text-slate-500">Sunday</span>
+                    <span className="text-slate-500">Closed</span>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <Separator className="my-6" />
-            <div className="bg-gradient-to-r from-emerald-50 to-green-50 dark:from-emerald-950/50 dark:to-green-950/50 p-6 rounded-2xl border border-emerald-200/50">
-              <h3 className="font-semibold text-lg mb-2 flex items-center">
-                <span className="text-2xl mr-2">🚚</span>
-                <span>Delivery Area</span>
-              </h3>
-              <p className="text-sm text-muted-foreground">Free delivery within 20 miles of our store. $5 flat rate for 20-40 miles. Call for areas beyond 40 miles.</p>
-            </div>
-          </CardContent>
-        </Card>
-        <Card className="w-full shadow-xl border-0 bg-white/80 backdrop-blur-sm dark:bg-slate-800/80">
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+        <Card >
           <CardHeader>
-            <CardTitle className="text-3xl font-bold">Get In Touch</CardTitle>
-            <CardDescription>Send us a message for custom orders, inquiries, or special requests</CardDescription>
+            <CardTitle>Frequently Asked Questions</CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4">
-            <form className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="name" className="text-sm font-medium">Name</Label>
-                <Input id="name" placeholder="Your full name" value={name} onChange={setName} />
+          <CardContent>
+            <div type="single" collapsible>
+              <div value="delivery">
+                <div>What are your delivery areas and times?</div>
+                <div>We deliver locally within 20 miles of our shop Monday-Saturday. Same-day delivery available for orders placed before 1PM. Standard delivery window is 10AM-5PM.</div>
               </div>
-              <div className="space-y-2">
-                <Label htmlFor="email" className="text-sm font-medium">Email</Label>
-                <Input id="email" type="email" placeholder="your@email.com" value={email} onChange={setEmail} />
+              <div value="custom-orders">
+                <div>How do custom orders work?</div>
+                <div>Use our contact form above for custom requests! Include your budget, occasion, colors, and delivery date. We'll respond within 24 hours with options and pricing.</div>
               </div>
-              <div className="space-y-2">
-                <Label htmlFor="message" className="text-sm font-medium">Message</Label>
-                <Textarea id="message" placeholder="Tell us about your custom order or inquiry..." rows={5} value={message} onChange={setMessage} />
+              <div value="payment">
+                <div>What payment methods do you accept?</div>
+                <div>We accept all major credit cards, Apple Pay, Google Pay, and cash on delivery/pickup. A 50% deposit is required for custom orders over $100.</div>
               </div>
-              <Button type="submit" className="w-full bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700 text-lg h-12 font-medium shadow-lg" disabled={submitting}>Send Message</Button>
-            </form>
+            </div>
           </CardContent>
         </Card>
       </div>
