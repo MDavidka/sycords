@@ -1,122 +1,155 @@
 import React from 'react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
-import { addToCart } from '@/lib/shop-logic'
+import { Label } from '@/components/ui/label'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { Slider } from '@/components/ui/slider'
 
 export function Shop() {
-  const [searchQuery, setSearchQuery] = React.useState('')
+  const [search, setSearch] = React.useState('')
+  const [category, setCategory] = React.useState('')
+  const [priceRange, setPriceRange] = React.useState(0)
+  const [sort, setSort] = React.useState('')
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 to-emerald-50 dark:from-gray-900 dark:to-gray-800 p-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-2">Shop</h1>
-          <p className="text-xl text-muted-foreground">Discover our collection of beautiful plants for your home and garden.</p>
-        </div>
+    <Card className="max-w-7xl mx-auto p-6">
+      <CardHeader>
+        <CardTitle>Shop</CardTitle>
+        <CardDescription>Discover our full catalog of flower arrangements, bouquets, and plants</CardDescription>
+      </CardHeader>
+      <CardContent>
         <div className="flex flex-col lg:flex-row gap-6 mb-8">
-          <div className="lg:w-64 space-y-4">
-            <div className="p-4 bg-card rounded-lg border">
-              <h3 className="font-semibold mb-4">Filters</h3>
-              <div className="space-y-2">
-                <div>
-                  <h4 className="font-medium mb-2 text-sm">Categories</h4>
-                  <div className="space-y-1">
-                    <Button variant="ghost" size="sm" className="justify-start h-8">Indoor</Button>
-                    <Button variant="ghost" size="sm" className="justify-start h-8">Outdoor</Button>
-                    <Button variant="ghost" size="sm" className="justify-start h-8">Low Light</Button>
-                    <Button variant="ghost" size="sm" className="justify-start h-8">Succulents</Button>
-                  </div>
-                </div>
-                <div>
-                  <h4 className="font-medium mb-2 text-sm">Price Range</h4>
-                  <div className="space-y-1">
-                    <Button variant="ghost" size="sm" className="justify-start h-8">Under $20</Button>
-                    <Button variant="ghost" size="sm" className="justify-start h-8">$20 - $50</Button>
-                    <Button variant="ghost" size="sm" className="justify-start h-8">$50+</Button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <Button variant="outline" size="sm" className="w-full">Clear Filters</Button>
-          </div>
-          <div className="flex-1 flex flex-col md:flex-row gap-4 items-center">
-            <div className="flex-1 md:w-80">
-              <Input placeholder="Search plants..." value={searchQuery} onChange={setSearchQuery} />
+          <div className="w-full lg:w-64 space-y-4">
+            <div>
+              <Label>Search products</Label>
+              <Input placeholder="Search by name..." value={search} onChange={setSearch} />
             </div>
             <div>
-              <div className="w-[180px]">
-                <div placeholder="Sort by" />
+              <Label>Categories</Label>
+              <Select value={category} onValueChange={setCategory}>
+                <SelectTrigger>
+                  <SelectValue placeholder="All categories" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All</SelectItem>
+                  <SelectItem value="roses">Roses</SelectItem>
+                  <SelectItem value="lilies">Lilies</SelectItem>
+                  <SelectItem value="mixed">Mixed Bouquets</SelectItem>
+                  <SelectItem value="plants">Plants</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            <div>
+              <Label>Price Range</Label>
+              <Slider value={priceRange} onValueChange={setPriceRange} max={200} step={10} />
+              <div className="flex justify-between text-sm text-muted-foreground">
+                <span>$0</span>
+                <span>$200</span>
               </div>
-              <div>
-                <div value="price-low">Price: Low to High</div>
-                <div value="price-high">Price: High to Low</div>
-                <div value="popularity">Popularity</div>
-                <div value="newest">Newest</div>
-              </div>
+            </div>
+            <div>
+              <Label>Sort by</Label>
+              <Select value={sort} onValueChange={setSort}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Choose sort order" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="price-asc">Price: Low to High</SelectItem>
+                  <SelectItem value="price-desc">Price: High to Low</SelectItem>
+                  <SelectItem value="popularity">Popularity</SelectItem>
+                  <SelectItem value="newest">Newest First</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+          <div className="flex-1">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              <Card>
+                <CardContent className="p-4 pt-6">
+                  <div className="aspect-[4/3] bg-muted rounded-lg mb-4 overflow-hidden">
+                    <div className="h-full w-full bg-gradient-to-br from-pink-400 to-rose-500 flex items-center justify-center">
+                      <span className="text-4xl">🌹</span>
+                    </div>
+                  </div>
+                  <h3 className="font-semibold text-lg mb-2">Classic Red Roses</h3>
+                  <p className="text-muted-foreground mb-4">12 premium red roses with greenery</p>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-2xl font-bold text-foreground">$49.99</span>
+                    <Badge variant="secondary">In Stock</Badge>
+                  </div>
+                  <Button className="w-full">Add to Cart</Button>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="p-4 pt-6">
+                  <div className="aspect-[4/3] bg-muted rounded-lg mb-4 overflow-hidden">
+                    <div className="h-full w-full bg-gradient-to-br from-white to-yellow-200 flex items-center justify-center">
+                      <span className="text-4xl">🌺</span>
+                    </div>
+                  </div>
+                  <h3 className="font-semibold text-lg mb-2">Pink Lily Bouquet</h3>
+                  <p className="text-muted-foreground mb-4">Elegant lilies with baby's breath</p>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-2xl font-bold text-foreground">$59.99</span>
+                    <Badge variant="secondary">In Stock</Badge>
+                  </div>
+                  <Button className="w-full">Add to Cart</Button>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="p-4 pt-6">
+                  <div className="aspect-[4/3] bg-muted rounded-lg mb-4 overflow-hidden">
+                    <div className="h-full w-full bg-gradient-to-br from-purple-400 to-indigo-500 flex items-center justify-center">
+                      <span className="text-4xl">🌸</span>
+                    </div>
+                  </div>
+                  <h3 className="font-semibold text-lg mb-2">Mixed Spring Flowers</h3>
+                  <p className="text-muted-foreground mb-4">Tulips, daffodils and more</p>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-2xl font-bold text-foreground">$39.99</span>
+                    <Badge variant="secondary">In Stock</Badge>
+                  </div>
+                  <Button className="w-full">Add to Cart</Button>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="p-4 pt-6">
+                  <div className="aspect-[4/3] bg-muted rounded-lg mb-4 overflow-hidden">
+                    <div className="h-full w-full bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center">
+                      <span className="text-4xl">🌿</span>
+                    </div>
+                  </div>
+                  <h3 className="font-semibold text-lg mb-2">Fiddle Leaf Fig</h3>
+                  <p className="text-muted-foreground mb-4">Large indoor plant</p>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-2xl font-bold text-foreground">$79.99</span>
+                    <Badge variant="secondary">In Stock</Badge>
+                  </div>
+                  <Button className="w-full">Add to Cart</Button>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="p-4 pt-6">
+                  <div className="aspect-[4/3] bg-muted rounded-lg mb-4 overflow-hidden">
+                    <div className="h-full w-full bg-gradient-to-br from-orange-400 to-amber-500 flex items-center justify-center">
+                      <span className="text-4xl">🌻</span>
+                    </div>
+                  </div>
+                  <h3 className="font-semibold text-lg mb-2">Sunflower Delight</h3>
+                  <p className="text-muted-foreground mb-4">Bright sunflowers bouquet</p>
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-2xl font-bold text-foreground">$44.99</span>
+                    <Badge variant="secondary">In Stock</Badge>
+                  </div>
+                  <Button className="w-full">Add to Cart</Button>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          <Card className="group hover:shadow-xl transition-all overflow-hidden">
-            <div className="aspect-square bg-gradient-to-br from-green-100 to-emerald-200 group-hover:scale-105 transition-transform p-6 flex items-center justify-center">
-              <div className="text-4xl">🌿</div>
-            </div>
-            <CardContent className="p-6 pt-0">
-              <h3 className="font-semibold text-lg mb-1">Monstera Deliciosa</h3>
-              <p className="text-sm text-muted-foreground mb-4">Indoor · Low Light</p>
-              <div className="flex items-center justify-between mb-4">
-                <div className="text-2xl font-bold text-green-600">$29</div>
-                <Badge variant="secondary">In Stock</Badge>
-              </div>
-              <Button className="w-full" onClick={addToCart}>Add to Cart</Button>
-            </CardContent>
-          </Card>
-          <Card className="group hover:shadow-xl transition-all overflow-hidden">
-            <div className="aspect-square bg-gradient-to-br from-blue-100 to-cyan-200 group-hover:scale-105 transition-transform p-6 flex items-center justify-center">
-              <div className="text-4xl">🪴</div>
-            </div>
-            <CardContent className="p-6 pt-0">
-              <h3 className="font-semibold text-lg mb-1">Snake Plant</h3>
-              <p className="text-sm text-muted-foreground mb-4">Indoor · Very Low Light</p>
-              <div className="flex items-center justify-between mb-4">
-                <div className="text-2xl font-bold text-green-600">$19</div>
-                <Badge variant="secondary">In Stock</Badge>
-              </div>
-              <Button className="w-full" onClick={addToCart}>Add to Cart</Button>
-            </CardContent>
-          </Card>
-          <Card className="group hover:shadow-xl transition-all overflow-hidden">
-            <div className="aspect-square bg-gradient-to-br from-pink-100 to-rose-200 group-hover:scale-105 transition-transform p-6 flex items-center justify-center">
-              <div className="text-4xl">🌸</div>
-            </div>
-            <CardContent className="p-6 pt-0">
-              <h3 className="font-semibold text-lg mb-1">Peace Lily</h3>
-              <p className="text-sm text-muted-foreground mb-4">Indoor · Medium Light</p>
-              <div className="flex items-center justify-between mb-4">
-                <div className="text-2xl font-bold text-green-600">$25</div>
-                <Badge variant="secondary">In Stock</Badge>
-              </div>
-              <Button className="w-full" onClick={addToCart}>Add to Cart</Button>
-            </CardContent>
-          </Card>
-          <Card className="group hover:shadow-xl transition-all overflow-hidden">
-            <div className="aspect-square bg-gradient-to-br from-yellow-100 to-amber-200 group-hover:scale-105 transition-transform p-6 flex items-center justify-center">
-              <div className="text-4xl">🍀</div>
-            </div>
-            <CardContent className="p-6 pt-0">
-              <h3 className="font-semibold text-lg mb-1">Pothos</h3>
-              <p className="text-sm text-muted-foreground mb-4">Indoor · Low Light</p>
-              <div className="flex items-center justify-between mb-4">
-                <div className="text-2xl font-bold text-green-600">$15</div>
-                <Badge variant="secondary">In Stock</Badge>
-              </div>
-              <Button className="w-full" onClick={addToCart}>Add to Cart</Button>
-            </CardContent>
-          </Card>
-        </div>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   )
 }
