@@ -1,35 +1,33 @@
-export function onSubmit(event: { preventDefault(): void, target: unknown }): void {
+export function submitContact(event: { preventDefault(): void, target: unknown }): void {
   event.preventDefault()
   const form = event.target as HTMLFormElement
-  const formData = new FormData(form)
-  const name = (formData.get('name') as string)?.trim()
-  const email = formData.get('email') as string
-  const message = (formData.get('message') as string)?.trim()
-
-  if (!name || !email || !message) {
-    window.alert('Please fill in all fields.')
-    return
-  }
-
-  if (!email.includes('@')) {
-    window.alert('Please enter a valid email address.')
-    return
-  }
-
-  formData.append('source', 'contact-form')
-
-  fetch('/api/contact', {
-    method: 'POST',
-    body: formData
-  })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Submission failed')
-      }
-      window.alert('Thank you! Your message has been sent. We\'ll get back to you soon.')
+  const data = new FormData(form)
+  fetch('/api/contact', { 
+    method: 'POST', 
+    body: data 
+  }).then(async (res) => {
+    if (res.ok) {
+      window.alert('Thank you for your message! We will get back to you within 24 hours.')
       form.reset()
-    })
-    .catch(() => {
-      window.alert('Sorry, something went wrong. Please try again.')
-    })
+    } else {
+      throw new Error('Submission failed')
+    }
+  }).catch(() => {
+    window.alert('Something went wrong. Please try again.')
+  })
+}
+
+export function openLiveChat(event: { preventDefault(): void }): void {
+  event.preventDefault()
+  window.open('https://livechat.example.com', '_blank', 'width=400,height=600')
+}
+
+export function callSales(event: { preventDefault(): void }): void {
+  event.preventDefault()
+  window.location.href = 'tel:+15551234567'
+}
+
+export function createSupportTicket(event: { preventDefault(): void }): void {
+  event.preventDefault()
+  window.location.href = '/support/tickets/new'
 }
