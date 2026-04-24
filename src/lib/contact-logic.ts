@@ -1,22 +1,50 @@
-export function onSubmitContactForm(event: { preventDefault(): void; target: unknown }): void {
+export function onStartChat(event: { preventDefault(): void }): void {
+  event.preventDefault();
+  window.alert("Connecting you to the next available support agent...");
+}
+
+export async function onSubmitContactForm(event: { preventDefault(): void, target: unknown }): Promise<void> {
   event.preventDefault();
   const form = event.target as HTMLFormElement;
   const data = new FormData(form);
-
-  fetch('/api/contact', {
-    method: 'POST',
-    body: data,
-  })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error('Failed to submit form');
-      }
-      window.alert('Thank you for contacting nivle! Your message has been sent successfully.');
-      form.reset();
-    })
-    .catch(() => {
-      // Fallback alert for demonstration/offline purposes
-      window.alert('Message sent successfully! We will get back to you shortly.');
-      form.reset();
+  
+  try {
+    await fetch('/api/contact', {
+      method: 'POST',
+      body: data
     });
+    window.alert("Message Sent! Thanks for reaching out! We'll get back to you within 24 hours.");
+    form.reset();
+  } catch (error) {
+    window.alert("Something went wrong. Please try again.");
+  }
+}
+
+export function onChangeFirstName(event: { target: { value: string } }): string {
+  const value = event.target.value;
+  sessionStorage.setItem('contact_firstName', value);
+  return value;
+}
+
+export function onChangeLastName(event: { target: { value: string } }): string {
+  const value = event.target.value;
+  sessionStorage.setItem('contact_lastName', value);
+  return value;
+}
+
+export function onChangeEmail(event: { target: { value: string } }): string {
+  const value = event.target.value;
+  sessionStorage.setItem('contact_email', value);
+  return value;
+}
+
+export function onChangeSubject(value: string): string {
+  sessionStorage.setItem('contact_subject', value);
+  return value;
+}
+
+export function onChangeMessage(event: { target: { value: string } }): string {
+  const value = event.target.value;
+  sessionStorage.setItem('contact_message', value);
+  return value;
 }
