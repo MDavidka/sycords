@@ -1,163 +1,161 @@
+import React from 'react'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { Separator } from '@/components/ui/separator'
 import { Textarea } from '@/components/ui/textarea'
-import { ArrowRightIcon, LifebuoyIcon, MapPinIcon, MessageCircleIcon, PhoneIcon } from '@heroicons/react/24/outline'
+import { Link } from 'react-router-dom'
+import { ArrowRightIcon, ClockIcon, EnvelopeIcon, MailIcon, MapPinIcon, PaperAirplaneIcon, PhoneIcon, QuestionMarkCircleIcon } from '@heroicons/react/24/outline'
+import { submitForm } from '@/lib/contact-logic'
 
 export function Contact() {
+  const [name, setName] = React.useState('')
+  const [email, setEmail] = React.useState('')
+  const [phone, setPhone] = React.useState('')
+  const [message, setMessage] = React.useState('')
 
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-24 space-y-12 lg:space-y-24">
-      <div className="text-center max-w-4xl mx-auto">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent mb-6">Get In Touch</h1>
-        <p className="text-xl sm:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">Ready to scale your infrastructure? Our team is standing by to help you choose the perfect hosting solution.</p>
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 max-w-6xl">
+      <div className="text-center mb-16">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent mb-6">Contact Us</h1>
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Have questions about custom bouquets, delivery, or need floral design support? We're here to help.</p>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-        <Card className="lg:sticky top-24 h-fit">
-          <CardHeader className="pb-4">
-            <CardTitle className="flex items-center gap-2">
-              <PhoneIcon className="h-6 w-6" />
-              <span>Contact Form</span>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-16">
+        <Card className="w-full">
+          <CardHeader className="pb-6">
+            <CardTitle className="flex items-center gap-2 text-2xl">
+              <MailIcon className="h-6 w-6" />
+              <div>Send Us a Message</div>
             </CardTitle>
-            <CardDescription>Submit your inquiry and we'll respond within 2 hours during business hours.</CardDescription>
+            <CardDescription>Request a custom bouquet design or get help with your order.</CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6 pt-2">
-            <div className="space-y-2">
+          <CardContent className="space-y-6">
+            <div className="space-y-4">
               <Label htmlFor="name">Full Name</Label>
-              <Input id="name" placeholder="John Doe" />
+              <Input id="name" placeholder="John Doe" value={name} />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="email">Email Address</Label>
-              <Input id="email" type="email" placeholder="john@example.com" />
+            <div className="space-y-4">
+              <Label htmlFor="email">Email</Label>
+              <Input id="email" type="email" placeholder="john@example.com" value={email} />
             </div>
-            <div className="space-y-2">
-              <Label htmlFor="plan">Interested In</Label>
-              <Select>
-                <SelectTrigger>
-                  <SelectValue placeholder="Select a plan" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="starter">Starter Plan</SelectItem>
-                  <SelectItem value="pro">Pro Plan</SelectItem>
-                  <SelectItem value="enterprise">Enterprise Plan</SelectItem>
-                  <SelectItem value="custom">Custom Solution</SelectItem>
-                </SelectContent>
-              </Select>
+            <div className="space-y-4">
+              <Label htmlFor="phone">Phone (optional)</Label>
+              <Input id="phone" type="tel" placeholder="(555) 123-4567" value={phone} />
             </div>
-            <div className="space-y-2">
+            <div className="space-y-4">
               <Label htmlFor="message">Message</Label>
-              <Textarea id="message" placeholder="Tell us about your hosting needs..." rows={5} />
+              <Textarea id="message" placeholder="Tell us about your custom bouquet request, occasion, colors, budget, or any questions..." rows={5} value={message} />
             </div>
-            <Button size="lg" className="w-full">
-              <span>Send Inquiry</span>
-              <ArrowRightIcon className="h-5 w-5 ml-2" />
+            <div className="space-y-4">
+              <Label htmlFor="photo">
+                <div>Reference Photo (optional)</div>
+                <p className="text-sm text-muted-foreground">Upload an inspiration photo for your custom design</p>
+              </Label>
+              <Input id="photo" type="file" accept="image/*" />
+            </div>
+            <Button className="w-full" onClick={submitForm}>
+              <PaperAirplaneIcon className="h-4 w-4 mr-2" />
+              <div>Send Message</div>
             </Button>
           </CardContent>
         </Card>
-        <div className="space-y-8">
+        <div className="space-y-8 lg:sticky lg:top-8 lg:h-fit">
           <Card>
-            <CardHeader className="flex-row items-center gap-3 pb-4">
-              <div className="p-3 bg-primary/10 rounded-lg">
-                <PhoneIcon className="h-6 w-6 text-primary" />
-              </div>
-              <div>
-                <CardTitle className="text-lg leading-tight">Sales Team</CardTitle>
-                <CardDescription>Mon-Fri 9AM-6PM EST</CardDescription>
-              </div>
+            <CardHeader className="pb-4">
+              <CardTitle className="flex items-center gap-2">
+                <MapPinIcon className="h-5 w-5" />
+                <div>Visit Our Store</div>
+              </CardTitle>
             </CardHeader>
-            <CardContent className="pt-0 space-y-4">
-              <div className="text-2xl font-bold">+1 (555) 123-4567</div>
-              <div className="text-sm text-muted-foreground">sales@serverhoster.com</div>
+            <CardContent className="space-y-6">
+              <div className="aspect-video rounded-lg overflow-hidden border bg-muted">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.566614137963!2d-73.987319684593!3d40.748447979328!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c259a9b311746f%3A0xd134e199a405a163!2sFlower%20Shop%20NYC!5e0!3m2!1sen!2sus!4v1690000000000" width="100%" height="100%" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" className="w-full h-full" />
+              </div>
+              <div className="space-y-2">
+                <div className="flex items-center gap-3">
+                  <MapPinIcon className="h-5 w-5 text-primary" />
+                  <p className="font-medium">123 Flower Street</p>
+                </div>
+                <p className="text-sm text-muted-foreground">New York, NY 10001</p>
+              </div>
+              <Separator />
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <PhoneIcon className="h-5 w-5 text-primary" />
+                  <p className="font-medium">(555) 123-FLOWERS</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <EnvelopeIcon className="h-5 w-5 text-primary" />
+                  <p className="font-medium">hello@flowershop.com</p>
+                </div>
+              </div>
             </CardContent>
           </Card>
           <Card>
-            <CardHeader className="flex-row items-center gap-3 pb-4">
-              <div className="p-3 bg-destructive/10 rounded-lg">
-                <LifebuoyIcon className="h-6 w-6 text-destructive" />
-              </div>
-              <div>
-                <CardTitle className="text-lg leading-tight">24/7 Support</CardTitle>
-                <CardDescription>Technical assistance anytime</CardDescription>
-              </div>
+            <CardHeader className="pb-4">
+              <CardTitle className="flex items-center gap-2">
+                <ClockIcon className="h-5 w-5" />
+                <div>Store Hours</div>
+              </CardTitle>
             </CardHeader>
-            <CardContent className="pt-0 space-y-4">
-              <div className="text-2xl font-bold">+1 (555) 987-6543</div>
-              <div className="text-sm text-muted-foreground">support@serverhoster.com</div>
-              <Button variant="outline">Open Support Ticket</Button>
+            <CardContent>
+              <div className="space-y-2">
+                <div className="flex justify-between text-sm">
+                  <div>Monday - Friday</div>
+                  <span className="font-medium">9AM - 7PM</span>
+                </div>
+                <div className="flex justify-between text-sm">
+                  <div>Saturday</div>
+                  <span className="font-medium">10AM - 6PM</span>
+                </div>
+                <div className="flex justify-between text-sm text-destructive">
+                  <div>Sunday</div>
+                  <span className="font-medium">Closed</span>
+                </div>
+              </div>
             </CardContent>
           </Card>
-          <div className="fixed bottom-6 right-6 lg:bottom-8 lg:right-8 z-50">
-            <Button size="lg" className="shadow-2xl h-14 w-14 p-0 rounded-full group hover:scale-110 transition-all duration-200">
-              <div className="flex flex-col items-center gap-1 group-hover:-translate-y-1 transition-transform duration-200">
-                <MessageCircleIcon className="h-6 w-6" />
-                <span className="text-xs font-medium leading-none -mt-1">Live Chat</span>
-              </div>
-            </Button>
-          </div>
         </div>
       </div>
-      <div>
-        <div className="max-w-4xl mx-auto text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold tracking-tight mb-6">Frequently Asked Questions</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Find answers to common hosting questions before reaching out.</p>
-        </div>
-        <Accordion type="single" collapsible defaultValue={1} className="max-w-4xl mx-auto w-full">
-          <AccordionItem value={1}>
-            <AccordionTrigger>What payment methods do you accept?</AccordionTrigger>
-            <AccordionContent>We accept all major credit cards (Visa, MasterCard, Amex), PayPal, cryptocurrency (BTC, ETH, USDT), and bank wire transfers for enterprise plans.</AccordionContent>
-          </AccordionItem>
-          <AccordionItem value={2}>
-            <AccordionTrigger>Do you offer money-back guarantee?</AccordionTrigger>
-            <AccordionContent>Yes! 30-day money-back guarantee on all plans. No questions asked. Enterprise plans have 14-day guarantee.</AccordionContent>
-          </AccordionItem>
-          <AccordionItem value={3}>
-            <AccordionTrigger>What is your server uptime guarantee?</AccordionTrigger>
-            <AccordionContent>99.99% uptime guarantee across all plans. We've maintained 99.999% average uptime over the past 12 months.</AccordionContent>
-          </AccordionItem>
-          <AccordionItem value={4}>
-            <AccordionTrigger>Where are your data centers located?</AccordionTrigger>
-            <AccordionContent>Primary data centers in Ashburn, VA (US East), Santa Clara, CA (US West), London (EU), Singapore (Asia), and Sydney (Australia).</AccordionContent>
-          </AccordionItem>
-          <AccordionItem value={5}>
-            <AccordionTrigger>Can I migrate my existing website?</AccordionTrigger>
-            <AccordionContent>Free website migration for all plans! Our team handles cPanel, Plesk, DirectAdmin, and manual migrations. Zero downtime guaranteed.</AccordionContent>
-          </AccordionItem>
-          <AccordionItem value={6}>
-            <AccordionTrigger>Do you provide SSL certificates?</AccordionTrigger>
-            <AccordionContent>Free Let's Encrypt SSL certificates included. Premium SSL (Sectigo, DigiCert) available as add-on starting at $10/year.</AccordionContent>
-          </AccordionItem>
-          <AccordionItem value={7}>
-            <AccordionTrigger>What control panel do you use?</AccordionTrigger>
-            <AccordionContent>cPanel/WHM (shared/VPS), DirectAdmin (budget VPS), and custom enterprise control panel for dedicated servers.</AccordionContent>
-          </AccordionItem>
-          <AccordionItem value={8}>
-            <AccordionTrigger>How long does server provisioning take?</AccordionTrigger>
-            <AccordionContent>Shared/VPS: Instant provisioning. Dedicated servers: 2-24 hours depending on hardware availability and custom configuration.</AccordionContent>
-          </AccordionItem>
-        </Accordion>
-      </div>
-      <Card className="overflow-hidden">
-        <CardHeader className="bg-muted/50 pb-8">
-          <div className="text-center">
-            <h3 className="text-2xl font-bold mb-2">Our Data Centers</h3>
-            <p className="text-muted-foreground max-w-md mx-auto">Strategically located for optimal global performance and redundancy.</p>
-          </div>
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2 text-2xl">
+            <QuestionMarkCircleIcon className="h-6 w-6" />
+            <div>Frequently Asked Questions</div>
+          </CardTitle>
         </CardHeader>
-        <CardContent className="p-0">
-          <div className="aspect-video w-full bg-gradient-to-br from-muted to-background">
-            <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-              <div className="text-center text-white max-w-md px-4">
-                <MapPinIcon className="h-12 w-12 mx-auto mb-4 opacity-80" />
-                <h4 className="text-2xl font-bold mb-2">Interactive Map Coming Soon</h4>
-                <p className="text-lg opacity-90">Multiple Tier-4 data centers worldwide</p>
-              </div>
-            </div>
-          </div>
+        <CardContent>
+          <Accordion type="single" collapsible>
+            <AccordionItem value="delivery">
+              <AccordionTrigger>What are your delivery areas and times?</AccordionTrigger>
+              <AccordionContent>We deliver same-day within 25 miles of our store (NYC area). Orders placed before 2PM weekdays ship same day. Weekend delivery available with 48hr notice. Nationwide shipping via FedEx for preserved arrangements.</AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="custom">
+              <AccordionTrigger>Can you create custom bouquet designs?</AccordionTrigger>
+              <AccordionContent>Absolutely! Use our contact form above with photos and details. Custom designs start at $75 with 3-5 day lead time. Rush orders welcome with 24hr notice (+50% premium).</AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="returns">
+              <AccordionTrigger>What is your return policy?</AccordionTrigger>
+              <AccordionContent>Fresh flowers are perishable - we guarantee 7 days of beauty. Contact us within 24hrs of delivery for quality issues. Store credit issued for valid claims. No refunds on custom designs.</AccordionContent>
+            </AccordionItem>
+            <AccordionItem value="payment">
+              <AccordionTrigger>What payment methods do you accept?</AccordionTrigger>
+              <AccordionContent>All major credit cards, Apple Pay, Google Pay, PayPal, Venmo, and gift cards. 3% discount for cash payments at our physical store.</AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
       </Card>
+      <div className="text-center mt-16 pt-16 border-t border-border">
+        <div className="inline-flex bg-muted rounded-full p-1 mb-6">
+          <div className="bg-background rounded-full px-6 py-2 text-sm font-medium">Ready to order?</div>
+        </div>
+        <Link className="inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground text-lg font-semibold px-8 py-4 rounded-full transition-all duration-200 group" to="/shop">
+          <div>Browse Our Flowers</div>
+          <ArrowRightIcon className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+        </Link>
+      </div>
     </div>
   )
 }
