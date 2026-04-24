@@ -1,186 +1,149 @@
-import React from 'react'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
-import { orderStarter, orderPro, orderEnterprise } from '@/lib/pricing-logic'
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
+import { Link } from 'react-router-dom'
+import { CheckCircleIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { checkoutStarter, checkoutPro } from '@/lib/pricing-logic'
 
 export function Pricing() {
-  const [billingPeriod, setBillingPeriod] = React.useState('')
 
   return (
-    <Card className="max-w-7xl mx-auto p-8">
-      <CardHeader>
-        <CardTitle className="text-4xl font-bold text-center">Simple, transparent pricing</CardTitle>
-        <CardDescription className="text-xl text-center max-w-2xl mx-auto">Choose the perfect plan for your needs. No hidden fees, cancel anytime.</CardDescription>
-      </CardHeader>
-      <CardContent className="space-y-12">
-        <div className="flex justify-center mb-12">
-          <ToggleGroup type="single" value={billingPeriod} onValueChange={setBillingPeriod}>
-            <ToggleGroupItem value="monthly" className="data-[state=on]:bg-primary data-[state=on]:text-primary-foreground px-6 py-2">Monthly</ToggleGroupItem>
-            <ToggleGroupItem value="yearly" className="data-[state=on]:bg-primary data-[state=on]:text-primary-foreground px-6 py-2">Yearly (20% off)</ToggleGroupItem>
-          </ToggleGroup>
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-24 max-w-7xl">
+      <div className="text-center mb-20 lg:mb-32">
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight bg-gradient-to-r from-primary/80 to-primary bg-clip-text text-transparent mb-6">Simple, transparent pricing</h1>
+        <p className="text-xl sm:text-2xl text-muted-foreground max-w-3xl mx-auto mb-12">Choose the perfect plan for your needs. No hidden fees, cancel anytime.</p>
+        <div className="flex justify-center items-center gap-2 mb-12">
+          <Button variant="outline" size="sm" id="monthly-toggle">Monthly</Button>
+          <Button variant="default" size="sm" id="yearly-toggle">
+            <span>Yearly</span>
+            <Badge variant="secondary" className="ml-2">Save 20%</Badge>
+          </Button>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <Card className="border-2 border-border p-8 group hover:shadow-xl transition-all">
-            <CardHeader>
-              <CardTitle>Starter</CardTitle>
-              <div className="text-4xl font-bold">$19</div>
-              <p className="text-muted-foreground">/mo</p>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <ul className="space-y-2">
-                <li className="text-sm flex items-center">
-                  <div className="w-4 h-4 bg-green-500 rounded-sm mr-2 flex-shrink-0" />
-                  <span>1 Website</span>
-                </li>
-                <li className="text-sm flex items-center">
-                  <div className="w-4 h-4 bg-green-500 rounded-sm mr-2 flex-shrink-0" />
-                  <span>10GB Storage</span>
-                </li>
-                <li className="text-sm flex items-center">
-                  <div className="w-4 h-4 bg-green-500 rounded-sm mr-2 flex-shrink-0" />
-                  <span>Basic Support</span>
-                </li>
-              </ul>
-              <Button variant="outline" className="w-full" onClick={orderStarter}>Get Started</Button>
-            </CardContent>
-          </Card>
-          <Card className="border-2 border-primary bg-primary/5 relative shadow-xl group hover:shadow-2xl transition-all">
-            <Badge variant="secondary" className="absolute -top-4 left-1/2 transform -translate-x-1/2">Most Popular</Badge>
-            <CardHeader>
-              <CardTitle>Pro</CardTitle>
-              <div className="text-4xl font-bold text-primary">$49</div>
-              <p className="text-muted-foreground">/mo</p>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <ul className="space-y-2">
-                <li className="text-sm flex items-center">
-                  <div className="w-4 h-4 bg-green-500 rounded-sm mr-2 flex-shrink-0" />
-                  <span>10 Websites</span>
-                </li>
-                <li className="text-sm flex items-center">
-                  <div className="w-4 h-4 bg-green-500 rounded-sm mr-2 flex-shrink-0" />
-                  <span>100GB Storage</span>
-                </li>
-                <li className="text-sm flex items-center">
-                  <div className="w-4 h-4 bg-green-500 rounded-sm mr-2 flex-shrink-0" />
-                  <span>Priority Support</span>
-                </li>
-                <li className="text-sm flex items-center">
-                  <div className="w-4 h-4 bg-green-500 rounded-sm mr-2 flex-shrink-0" />
-                  <span>Custom Domain</span>
-                </li>
-              </ul>
-              <Button className="w-full" onClick={orderPro}>Get Pro</Button>
-            </CardContent>
-          </Card>
-          <Card className="border-2 border-border p-8 group hover:shadow-xl transition-all">
-            <CardHeader>
-              <CardTitle>Enterprise</CardTitle>
-              <div className="text-4xl font-bold">$199</div>
-              <p className="text-muted-foreground">/mo</p>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <ul className="space-y-2">
-                <li className="text-sm flex items-center">
-                  <div className="w-4 h-4 bg-green-500 rounded-sm mr-2 flex-shrink-0" />
-                  <span>Unlimited Websites</span>
-                </li>
-                <li className="text-sm flex items-center">
-                  <div className="w-4 h-4 bg-green-500 rounded-sm mr-2 flex-shrink-0" />
-                  <span>1TB Storage</span>
-                </li>
-                <li className="text-sm flex items-center">
-                  <div className="w-4 h-4 bg-green-500 rounded-sm mr-2 flex-shrink-0" />
-                  <span>24/7 Phone Support</span>
-                </li>
-              </ul>
-              <Button variant="outline" className="w-full" onClick={orderEnterprise}>Contact Sales</Button>
-            </CardContent>
-          </Card>
-        </div>
-        <Card>
-          <CardHeader>
-            <CardTitle>Feature comparison</CardTitle>
+      </div>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 mb-20">
+        <Card className="group relative border-2 border-border hover:border-primary/50 transition-all duration-300 lg:hover:-translate-y-2">
+          <CardHeader className="pb-6">
+            <CardTitle className="text-2xl font-bold">Starter</CardTitle>
+            <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary">$9</p>
+            <p className="text-muted-foreground text-sm">/mo</p>
           </CardHeader>
-          <CardContent>
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr>
-                    <th className="text-left font-normal text-muted-foreground p-4">Features</th>
-                    <th className="text-center p-4 font-medium">Starter</th>
-                    <th className="text-center p-4 font-semibold bg-primary/5">Pro</th>
-                    <th className="text-center p-4 font-medium">Enterprise</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td className="p-4 font-medium">Websites</td>
-                    <td className="text-center p-4">1</td>
-                    <td className="text-center p-4 font-semibold">10</td>
-                    <td className="text-center p-4">Unlimited</td>
-                  </tr>
-                  <tr>
-                    <td className="p-4 font-medium">Storage</td>
-                    <td className="text-center p-4">10GB</td>
-                    <td className="text-center p-4 font-semibold">100GB</td>
-                    <td className="text-center p-4">1TB</td>
-                  </tr>
-                  <tr>
-                    <td className="p-4 font-medium">Support</td>
-                    <td className="text-center p-4">Basic</td>
-                    <td className="text-center p-4 font-semibold">Priority</td>
-                    <td className="text-center p-4">24/7 Phone</td>
-                  </tr>
-                  <tr>
-                    <td className="p-4 font-medium">Custom Domain</td>
-                    <td className="text-center p-4">❌</td>
-                    <td className="text-center p-4 font-semibold">✅</td>
-                    <td className="text-center p-4">✅</td>
-                  </tr>
-                </tbody>
-              </table>
+          <CardContent className="space-y-4 pb-6">
+            <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg">
+              <CheckCircleIcon className="h-5 w-5 text-green-500" />
+              <span>1 Website</span>
+            </div>
+            <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg">
+              <CheckCircleIcon className="h-5 w-5 text-green-500" />
+              <span>10 GB NVMe Storage</span>
+            </div>
+            <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg">
+              <CheckCircleIcon className="h-5 w-5 text-green-500" />
+              <span>Unlimited Bandwidth</span>
+            </div>
+            <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg opacity-75">
+              <XMarkIcon className="h-5 w-5 text-muted-foreground" />
+              <span>Custom Domain</span>
             </div>
           </CardContent>
+          <CardFooter>
+            <Button className="w-full" onClick={checkoutStarter}>Get Started</Button>
+          </CardFooter>
         </Card>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 pt-12">
-          <Card>
-            <CardHeader>
-              <CardTitle>Frequently asked questions</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <Accordion type="single" collapsible>
-                <AccordionItem value="billing">
-                  <AccordionTrigger>How does yearly billing work?</AccordionTrigger>
-                  <AccordionContent>Yearly billing gives you 20% off compared to monthly. You can switch or cancel anytime. No long-term contracts.</AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="cancel">
-                  <AccordionTrigger>Can I cancel anytime?</AccordionTrigger>
-                  <AccordionContent>Yes! Cancel anytime with one click. No questions asked, no penalties. Your sites stay live until the end of your billing period.</AccordionContent>
-                </AccordionItem>
-                <AccordionItem value="support">
-                  <AccordionTrigger>What kind of support do you offer?</AccordionTrigger>
-                  <AccordionContent>Starter gets email support, Pro gets priority email + chat, Enterprise gets 24/7 phone support with 15-minute response times.</AccordionContent>
-                </AccordionItem>
-              </Accordion>
-            </CardContent>
-          </Card>
-          <div className="space-y-4">
-            <Card>
-              <CardHeader>
-                <CardTitle>Not sure which plan?</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <Button variant="outline" className="w-full" href="/features">See all features</Button>
-                <Button className="w-full" href="/contact">Talk to sales</Button>
-              </CardContent>
-            </Card>
+        <Card className="relative border-2 border-primary bg-gradient-to-br from-primary/5 to-primary/10 lg:col-span-1 shadow-2xl lg:-mt-12 lg:mb-12 group hover:shadow-3xl transition-all duration-500 lg:hover:-translate-y-4">
+          <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+            <div className="bg-primary text-primary-foreground px-6 py-2 rounded-full text-sm font-semibold shadow-lg">Most Popular</div>
           </div>
-        </div>
-      </CardContent>
-    </Card>
+          <CardHeader className="pb-6">
+            <CardTitle className="text-2xl font-bold">Pro</CardTitle>
+            <p className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">$29</p>
+            <p className="text-muted-foreground text-sm">/mo</p>
+          </CardHeader>
+          <CardContent className="space-y-4 pb-6">
+            <div className="flex items-center gap-3 p-3 bg-primary/10 rounded-lg border border-primary/20">
+              <CheckCircleIcon className="h-5 w-5 text-primary" />
+              <span>Unlimited Websites</span>
+            </div>
+            <div className="flex items-center gap-3 p-3 bg-primary/10 rounded-lg border border-primary/20">
+              <CheckCircleIcon className="h-5 w-5 text-primary" />
+              <span>100 GB NVMe Storage</span>
+            </div>
+            <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg">
+              <CheckCircleIcon className="h-5 w-5 text-green-500" />
+              <span>Free Custom Domain</span>
+            </div>
+            <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg">
+              <CheckCircleIcon className="h-5 w-5 text-green-500" />
+              <span>Priority Support</span>
+            </div>
+          </CardContent>
+          <CardFooter>
+            <Button className="w-full bg-primary/90 hover:bg-primary text-primary-foreground shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200" onClick={checkoutPro}>Choose Pro Plan</Button>
+          </CardFooter>
+        </Card>
+        <Card className="group relative border-2 border-border hover:border-primary/50 transition-all duration-300 lg:hover:-translate-y-2">
+          <CardHeader className="pb-6">
+            <CardTitle className="text-2xl font-bold">Enterprise</CardTitle>
+            <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-primary">Custom</p>
+            <p className="text-muted-foreground text-sm">/mo</p>
+          </CardHeader>
+          <CardContent className="space-y-4 pb-6">
+            <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg">
+              <CheckCircleIcon className="h-5 w-5 text-green-500" />
+              <span>Unlimited Everything</span>
+            </div>
+            <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg">
+              <CheckCircleIcon className="h-5 w-5 text-green-500" />
+              <span>Dedicated Support</span>
+            </div>
+            <div className="flex items-center gap-3 p-3 bg-muted/50 rounded-lg">
+              <CheckCircleIcon className="h-5 w-5 text-green-500" />
+              <span>Custom SLA</span>
+            </div>
+          </CardContent>
+          <CardFooter>
+            <Button variant="outline" className="w-full" asChild>
+              <Link to="/contact">Contact Sales</Link>
+            </Button>
+          </CardFooter>
+        </Card>
+      </div>
+      <div className="max-w-4xl mx-auto">
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-2xl">Frequently Asked Questions</CardTitle>
+            <CardDescription>Everything you need to know about our pricing and billing.</CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Accordion type="single" collapsible>
+              <AccordionItem value="billing-cycle">
+                <AccordionTrigger>What payment methods do you accept?</AccordionTrigger>
+                <AccordionContent>We accept all major credit cards (Visa, MasterCard, American Express), PayPal, and bank transfers for enterprise plans. Payments are processed securely via Stripe.</AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="cancel-anytime">
+                <AccordionTrigger>Can I cancel my subscription anytime?</AccordionTrigger>
+                <AccordionContent>Yes! You can cancel your subscription at any time from your dashboard. Your plan will remain active until the end of your current billing cycle.</AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="refund-policy">
+                <AccordionTrigger>What is your refund policy?</AccordionTrigger>
+                <AccordionContent>We offer a 30-day money-back guarantee. If you're not satisfied with our hosting for any reason, contact support within 30 days and we'll refund your purchase.</AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="upgrade-downgrade">
+                <AccordionTrigger>Can I upgrade or downgrade my plan?</AccordionTrigger>
+                <AccordionContent>Absolutely. You can upgrade or downgrade your plan anytime from the dashboard. Upgrades take effect immediately, downgrades apply at the end of your billing cycle.</AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="taxes">
+                <AccordionTrigger>Are taxes included in the pricing?</AccordionTrigger>
+                <AccordionContent>Prices shown exclude applicable taxes and VAT. Taxes will be calculated and added at checkout based on your billing location.</AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="multiple-sites">
+                <AccordionTrigger>Can I host multiple sites on one plan?</AccordionTrigger>
+                <AccordionContent>Starter allows 1 site, Pro allows unlimited sites, and Enterprise is fully customizable. Each site gets its own resources and performance guarantees.</AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
   )
 }

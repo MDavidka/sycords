@@ -1,123 +1,183 @@
-import React from 'react'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { ArrowRightIcon, CodeBracketIcon, ExclamationTriangleIcon, HomeIcon, LifebuoyIcon, MagnifyingGlassIcon, PlayIcon, RocketLaunchIcon, WrenchScrewdriverIcon } from '@heroicons/react/24/outline'
 
 export function Documentation() {
-  const [searchQuery, setSearchQuery] = React.useState('')
 
   return (
-    <div className="container mx-auto p-8 max-w-7xl grid grid-cols-1 lg:grid-cols-4 gap-8">
-      <div className="lg:col-span-1 space-y-4">
-        <Card>
-          <CardHeader>
-            <CardTitle>Documentation</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-2">
-            <Button variant="ghost" className="justify-start w-full">Getting Started</Button>
-            <Button variant="ghost" className="justify-start w-full">Deployment</Button>
-            <Button variant="ghost" className="justify-start w-full">Domain Management</Button>
-            <Button variant="ghost" className="justify-start w-full">SSL Setup</Button>
-            <Button variant="ghost" className="justify-start w-full">Scaling</Button>
-            <Button variant="ghost" className="justify-start w-full">API Reference</Button>
-          </CardContent>
-        </Card>
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-12 max-w-7xl">
+      <div className="text-center mb-12 lg:mb-20">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight bg-gradient-to-r from-primary to-foreground bg-clip-text text-transparent mb-4">Documentation</h1>
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Comprehensive guides, API references, and troubleshooting for developers and customers</p>
       </div>
-      <div className="lg:col-span-3 space-y-8">
-        <Card>
-          <CardContent className="p-6">
-            <div className="flex flex-col sm:flex-row gap-4 items-center mb-6">
-              <h1 className="text-3xl font-bold tracking-tight">Documentation</h1>
-              <div className="flex-1 max-w-md">
-                <Input placeholder="Search documentation..." value={searchQuery} onChange={setSearchQuery} />
-              </div>
-            </div>
-            <p className="text-muted-foreground text-lg max-w-2xl">Comprehensive guides covering deployment, domain management, SSL setup, scaling, and API documentation for technical users.</p>
-          </CardContent>
-        </Card>
-        <Card>
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8 mb-8">
+        <Card className="lg:col-span-1">
           <CardHeader>
-            <CardTitle>Getting Started</CardTitle>
-            <CardDescription>Quick guides to get you up and running</CardDescription>
+            <CardTitle className="flex items-center gap-2">
+              <MagnifyingGlassIcon className="h-5 w-5" />
+              <span>Search Docs</span>
+            </CardTitle>
           </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="space-y-3">
-              <div className="flex gap-3 items-start">
-                <div className="flex-shrink-0 mt-0.5">
-                  <div className="w-2 h-2 bg-primary rounded-full" />
-                </div>
-                <div>
-                  <p className="font-medium">1. Create your first project</p>
-                  <p className="text-sm text-muted-foreground">Use our CLI or dashboard to deploy your first site</p>
-                  <pre className="mt-2 p-3 bg-muted rounded-md text-sm overflow-x-auto">
-                    <code>npx create-hosting@latest my-site</code>
-                  </pre>
-                  <Button size="sm" variant="outline">Copy code</Button>
-                </div>
+          <CardContent className="p-0">
+            <Input placeholder="Search documentation..." className="w-full rounded-none border-x-0 border-t-0 border-b-2 focus-visible:ring-0 focus-visible:border-primary h-12" />
+            <div className="p-4 space-y-2">
+              <div className="flex items-center gap-2 text-sm text-muted-foreground p-2 rounded-md cursor-pointer hover:bg-accent">
+                <HomeIcon className="h-4 w-4" />
+                <span>Getting Started</span>
               </div>
-              <div className="flex gap-3 items-start">
-                <div className="flex-shrink-0 mt-1.5">
-                  <div className="w-2 h-2 bg-primary rounded-full" />
-                </div>
-                <div>
-                  <p className="font-medium">2. Connect your domain</p>
-                  <p className="text-sm text-muted-foreground">Add your custom domain in 2 minutes</p>
-                </div>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground p-2 rounded-md cursor-pointer hover:bg-accent">
+                <CodeBracketIcon className="h-4 w-4" />
+                <span>API Reference</span>
               </div>
-              <div className="flex gap-3 items-start">
-                <div className="flex-shrink-0 mt-3">
-                  <div className="w-2 h-2 bg-primary rounded-full" />
-                </div>
-                <div>
-                  <p className="font-medium">3. Go live!</p>
-                  <p className="text-sm text-muted-foreground">Your site is now accessible worldwide</p>
-                </div>
+              <div className="flex items-center gap-2 text-sm text-muted-foreground p-2 rounded-md cursor-pointer hover:bg-accent">
+                <WrenchScrewdriverIcon className="h-4 w-4" />
+                <span>Troubleshooting</span>
               </div>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3 pt-4">
-              <Button>Watch Video Tutorial</Button>
-              <Button variant="outline">View All Guides</Button>
             </div>
           </CardContent>
         </Card>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <Card>
-            <CardHeader>
-              <CardTitle>Deployment Guide</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <p className="text-muted-foreground">Step-by-step instructions for deploying static sites, Next.js apps, and Docker containers.</p>
-              <div className="flex gap-2">
-                <Badge>Static Sites</Badge>
-                <Badge variant="secondary">Next.js</Badge>
-                <Badge variant="outline">Docker</Badge>
+        <Card className="lg:col-span-3">
+          <Tabs defaultValue="getting-started" className="w-full">
+            <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3">
+              <TabsTrigger value="getting-started">
+                <RocketLaunchIcon className="h-4 w-4 mr-2" />
+                <span>Getting Started</span>
+              </TabsTrigger>
+              <TabsTrigger value="api">
+                <CodeBracketIcon className="h-4 w-4 mr-2" />
+                <span>API Reference</span>
+              </TabsTrigger>
+              <TabsTrigger value="troubleshooting">
+                <ExclamationTriangleIcon className="h-4 w-4 mr-2" />
+                <span>Troubleshooting</span>
+              </TabsTrigger>
+            </TabsList>
+            <TabsContent value="getting-started" className="mt-6">
+              <div className="space-y-6">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Quickstart Guide</CardTitle>
+                    <CardDescription>Deploy your first site in under 2 minutes</CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <h3 className="font-semibold mb-2 flex items-center gap-2">
+                          <span>1.</span>
+                          <span>Connect Domain</span>
+                        </h3>
+                        <p className="text-sm text-muted-foreground">Add your domain via our one-click DNS setup</p>
+                      </div>
+                      <div>
+                        <h3 className="font-semibold mb-2 flex items-center gap-2">
+                          <span>2.</span>
+                          <span>Deploy Site</span>
+                        </h3>
+                        <p className="text-sm text-muted-foreground">Push to Git or upload via SFTP</p>
+                      </div>
+                    </div>
+                    <div className="bg-muted/50 p-4 rounded-lg">
+                      <h4 className="font-mono text-sm font-semibold mb-2">React Quickstart</h4>
+                      <pre className="bg-background p-3 rounded-md text-xs overflow-x-auto">
+                        <code>npm create vite@latest my-site -- --template react\nnpm install\nnpx vite build\n# Deploy build/ folder</code>
+                      </pre>
+                    </div>
+                  </CardContent>
+                </Card>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <Card>
+                    <CardHeader className="pb-2">
+                      <CardTitle className="text-lg">Video Tutorial</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="aspect-video bg-muted rounded-md flex items-center justify-center">
+                        <PlayIcon className="h-12 w-12 text-muted-foreground" />
+                      </div>
+                    </CardContent>
+                  </Card>
+                  <Card>
+                    <CardHeader className="pb-2">
+                      <CardTitle className="text-lg">Popular Frameworks</CardTitle>
+                    </CardHeader>
+                    <CardContent className="space-y-2">
+                      <Badge variant="secondary">Next.js</Badge>
+                      <Badge variant="secondary">Nuxt</Badge>
+                      <Badge variant="secondary">SvelteKit</Badge>
+                    </CardContent>
+                  </Card>
+                </div>
               </div>
-              <Button variant="link" className="p-0 h-auto">Read full guide →</Button>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardHeader>
-              <CardTitle>API Documentation</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <p className="text-muted-foreground">Complete REST and GraphQL API reference with code examples.</p>
-              <pre className="p-3 bg-muted rounded-md text-xs overflow-x-auto">
-                <code>GET /api/v1/projects</code>
-              </pre>
-              <Button size="sm">View API Docs</Button>
-            </CardContent>
-          </Card>
-        </div>
-        <Card>
-          <CardHeader>
-            <CardTitle>Need Help?</CardTitle>
-          </CardHeader>
-          <CardContent className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
-            <Button variant="outline">Support Center</Button>
-            <Button variant="outline">Pricing</Button>
-            <Button variant="outline">Contact Sales</Button>
-          </CardContent>
+            </TabsContent>
+            <TabsContent value="api" className="mt-6">
+              <Card>
+                <CardHeader>
+                  <CardTitle>API Reference</CardTitle>
+                  <CardDescription>REST API endpoints for programmatic hosting management</CardDescription>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="bg-muted/50 p-4 rounded-lg">
+                    <div className="flex items-center gap-2 mb-2">
+                      <CodeBracketIcon className="h-4 w-4" />
+                      <h4 className="font-mono font-semibold">GET /api/v1/sites</h4>
+                    </div>
+                    <pre className="bg-background p-3 rounded-md text-xs overflow-x-auto">
+                      <code>curl -H "Authorization: Bearer YOUR_TOKEN"\n  https://api.hosting.com/v1/sites</code>
+                    </pre>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <Badge variant="outline">Sites</Badge>
+                    <Badge variant="outline">Domains</Badge>
+                    <Badge variant="outline">SSL</Badge>
+                    <Badge variant="outline">Deployments</Badge>
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+            <TabsContent value="troubleshooting" className="mt-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Common Issues</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    <div className="flex items-start gap-3 p-3 rounded-md hover:bg-accent cursor-pointer">
+                      <ExclamationTriangleIcon className="h-4 w-4 mt-0.5 flex-shrink-0 text-destructive" />
+                      <div>
+                        <p className="font-medium">Build failed</p>
+                        <p className="text-sm text-muted-foreground">Node version mismatch or missing dependencies</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3 p-3 rounded-md hover:bg-accent cursor-pointer">
+                      <ExclamationTriangleIcon className="h-4 w-4 mt-0.5 flex-shrink-0 text-destructive" />
+                      <div>
+                        <p className="font-medium">SSL certificate pending</p>
+                        <p className="text-sm text-muted-foreground">DNS propagation can take up to 72 hours</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+                <Card>
+                  <CardHeader>
+                    <CardTitle>Need Help?</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4 pt-2">
+                    <Button variant="outline" className="w-full justify-start">
+                      <LifebuoyIcon className="h-4 w-4 mr-2" />
+                      <span>Contact Support</span>
+                      <span className="ml-auto">→</span>
+                    </Button>
+                    <Button variant="default" className="w-full">
+                      <ArrowRightIcon className="h-4 w-4 mr-2" />
+                      <span>Go to Dashboard</span>
+                    </Button>
+                  </CardContent>
+                </Card>
+              </div>
+            </TabsContent>
+          </Tabs>
         </Card>
       </div>
     </div>
