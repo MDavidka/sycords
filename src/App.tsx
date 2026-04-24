@@ -3,7 +3,7 @@ import { SiteNav } from './components/site-nav'
 import { Home } from './pages/index'
 import { Pricing } from './pages/pricing'
 import { Features } from './pages/features'
-import { Documentation } from './pages/docs'
+import { About } from './pages/about'
 import { Contact } from './pages/contact'
 
 export default function App() {
@@ -15,7 +15,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/features" element={<Features />} />
-        <Route path="/docs" element={<Documentation />} />
+        <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<Home />} />
         </Routes>
