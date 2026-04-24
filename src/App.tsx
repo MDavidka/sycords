@@ -4,7 +4,7 @@ import { Home } from './pages/index'
 import { Pricing } from './pages/pricing'
 import { Features } from './pages/features'
 import { Documentation } from './pages/docs'
-import { Support } from './pages/support'
+import { Contact } from './pages/contact'
 
 export default function App() {
   return (
@@ -16,7 +16,7 @@ export default function App() {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/features" element={<Features />} />
         <Route path="/docs" element={<Documentation />} />
-        <Route path="/support" element={<Support />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<Home />} />
         </Routes>
       </main>

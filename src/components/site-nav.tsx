@@ -8,7 +8,7 @@ const NAV_ITEMS = [
   { to: '/pricing', label: 'Pricing' },
   { to: '/features', label: 'Features' },
   { to: '/docs', label: 'Documentation' },
-  { to: '/support', label: 'Support' },
+  { to: '/contact', label: 'Contact' },
 ]
 
 export function SiteNav() {
