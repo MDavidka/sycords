@@ -5,10 +5,10 @@ import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/s
 
 const NAV_ITEMS = [
   { to: '/', label: 'Home' },
-  { to: '/hosting', label: 'Hosting' },
+  { to: '/hosting', label: 'HostingPlans' },
   { to: '/domains', label: 'Domains' },
-  { to: '/about', label: 'About' },
-  { to: '/contact', label: 'Contact' },
+  { to: '/about', label: 'AboutUs' },
+  { to: '/contact', label: 'ContactSupport' },
 ]
 
 export function SiteNav() {
