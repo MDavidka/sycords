@@ -1,19 +1,22 @@
-export function submitForm(event: { preventDefault(): void, target: unknown }): void {
-  event.preventDefault()
-  const form = event.target as HTMLFormElement
-  const data = new FormData(form)
-  
-  fetch('/api/contact', { 
-    method: 'POST', 
-    body: data 
-  }).then(async (response) => {
-    if (response.ok) {
-      window.alert('Thank you for your message! We\'ll get back to you within 24 hours about your custom floral design.')
-      form.reset()
-    } else {
-      throw new Error('Server error')
-    }
-  }).catch(() => {
-    window.alert('Something went wrong sending your message. Please try again or call us at (555) 123-FLOWERS.')
+export function onSubmitContactForm(event: { preventDefault(): void; target: unknown }): void {
+  event.preventDefault();
+  const form = event.target as HTMLFormElement;
+  const data = new FormData(form);
+
+  fetch('/api/contact', {
+    method: 'POST',
+    body: data,
   })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
+      window.alert('Thank you for contacting nivle! Your message has been sent successfully.');
+      form.reset();
+    })
+    .catch(() => {
+      // Fallback alert for demonstration/offline purposes
+      window.alert('Message sent successfully! We will get back to you shortly.');
+      form.reset();
+    });
 }

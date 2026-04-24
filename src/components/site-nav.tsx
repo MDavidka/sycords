@@ -5,8 +5,8 @@ import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/s
 
 const NAV_ITEMS = [
   { to: '/', label: 'Home' },
-  { to: '/shop', label: 'Shop' },
-  { to: '/cart', label: 'Cart' },
+  { to: '/hosting', label: 'Webhosting' },
+  { to: '/vps', label: 'Vpsservers' },
   { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },
 ]
