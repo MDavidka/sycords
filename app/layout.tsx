@@ -4,11 +4,11 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 
 export const metadata: Metadata = {
-  title: "sycords — Frictionless Hosting for Modern Teams",
-  description: "Sycords provides scalable cloud hosting with instant deployments, real-time monitoring, and seamless collaboration tools for developers and teams building the future.",
+  title: "sycords — Deploy your code in seconds. Scale to millions.",
+  description: "Modern cloud hosting engineered for developers. Push to deploy, automatic scaling, and edge network performance out of the box.",
   openGraph: {
-    title: "sycords — Frictionless Hosting for Modern Teams",
-    description: "Sycords provides scalable cloud hosting with instant deployments, real-time monitoring, and seamless collaboration tools for developers and teams building the future.",
+    title: "sycords — Deploy your code in seconds. Scale to millions.",
+    description: "Modern cloud hosting engineered for developers. Push to deploy, automatic scaling, and edge network performance out of the box.",
     siteName: "sycords",
     type: "website",
   },

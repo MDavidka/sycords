@@ -1,15 +1,14 @@
 import Link from "next/link"
-import { Check } from "lucide-react"
+import { Check, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { type Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Pricing Plans - Sycords Hosting",
-  description: "Flexible hosting plans from free to enterprise. Pay for what you use.",
+  title: "Pricing Plans - Sycords",
+  description: "Transparent, usage-based pricing for developers and teams of all sizes.",
 }
 
 export default function PricingPage() {
@@ -20,9 +19,9 @@ export default function PricingPage() {
       <div className="mx-auto max-w-4xl px-4 py-24 text-center sm:px-6 md:py-32 lg:px-8">
         
         <h1 className="text-balance text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">Ship something people remember.</h1>
-        
+        <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg text-muted-foreground">No hidden fees, no complex calculators. Just straightforward pricing that scales alongside your application.</p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <Button asChild size="lg"><Link href="#">Get started</Link></Button>
+          <Button asChild size="lg"><Link href="#plans">View Plans</Link></Button>
           
         </div>
         
@@ -34,68 +33,50 @@ export default function PricingPage() {
         <div className="mx-auto max-w-3xl text-center space-y-4">
           
           <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">Pricing built for every stage</h2>
-          
+          <p className="mx-auto max-w-2xl text-pretty text-muted-foreground">Save 20% when you choose annual billing.</p>
         </div>
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
           <Card className="relative ">
             
             <CardHeader>
-              <CardTitle className="text-xl">Hobby</CardTitle>
-              <CardDescription></CardDescription>
+              <CardTitle className="text-xl">Pro</CardTitle>
+              <CardDescription>Everything you need to run production apps.</CardDescription>
               <div className="mt-4 flex items-baseline gap-1">
-                <span className="text-4xl font-semibold tracking-tight"></span>
-                <span className="text-sm text-muted-foreground">mo</span>
+                <span className="text-4xl font-semibold tracking-tight">$20</span>
+                <span className="text-sm text-muted-foreground">per month</span>
               </div>
             </CardHeader>
             <CardContent>
               <Separator className="mb-6" />
               <ul className="space-y-3 text-sm">
-                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />1 project</li>
-                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />100GB bandwidth</li>
-                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />Basic monitoring</li>
+                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />1TB Edge Bandwidth</li>
+                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />10 Concurrent Builds</li>
+                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />Custom Domains &amp; SSL</li>
+                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />Email Support</li>
               </ul>
-              <Button asChild variant="outline" className="mt-6 w-full"><Link href="#">Choose plan</Link></Button>
+              <Button asChild variant="outline" className="mt-6 w-full"><Link href="/login">Start Pro</Link></Button>
             </CardContent>
           </Card>
           <Card className="relative ring-2 ring-primary shadow-xl shadow-primary/10 scale-[1.02]">
             <div className="absolute -top-3 left-1/2 -translate-x-1/2"><Badge>Most popular</Badge></div>
             <CardHeader>
-              <CardTitle className="text-xl">Pro</CardTitle>
-              <CardDescription></CardDescription>
+              <CardTitle className="text-xl">Team</CardTitle>
+              <CardDescription>Advanced collaboration and higher limits.</CardDescription>
               <div className="mt-4 flex items-baseline gap-1">
-                <span className="text-4xl font-semibold tracking-tight"></span>
-                <span className="text-sm text-muted-foreground">mo</span>
+                <span className="text-4xl font-semibold tracking-tight">$99</span>
+                <span className="text-sm text-muted-foreground">per month</span>
               </div>
             </CardHeader>
             <CardContent>
               <Separator className="mb-6" />
               <ul className="space-y-3 text-sm">
-                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />Unlimited projects</li>
-                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />1TB bandwidth</li>
-                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />Advanced monitoring</li>
-                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />Team features</li>
+                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />5TB Edge Bandwidth</li>
+                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />Unlimited Builds</li>
+                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />Role-based Access Control</li>
+                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />Priority 24/7 Support</li>
+                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />Advanced Analytics</li>
               </ul>
-              <Button asChild variant="default" className="mt-6 w-full"><Link href="#">Choose plan</Link></Button>
-            </CardContent>
-          </Card>
-          <Card className="relative ">
-            
-            <CardHeader>
-              <CardTitle className="text-xl">Enterprise</CardTitle>
-              <CardDescription></CardDescription>
-              <div className="mt-4 flex items-baseline gap-1">
-                <span className="text-4xl font-semibold tracking-tight">Contact</span>
-                <span className="text-sm text-muted-foreground">us</span>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <Separator className="mb-6" />
-              <ul className="space-y-3 text-sm">
-                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />Custom everything</li>
-                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />Dedicated support</li>
-                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />Private infrastructure</li>
-              </ul>
-              <Button asChild variant="outline" className="mt-6 w-full"><Link href="#">Choose plan</Link></Button>
+              <Button asChild variant="default" className="mt-6 w-full"><Link href="/login">Start Team</Link></Button>
             </CardContent>
           </Card>
         </div>
@@ -103,26 +84,68 @@ export default function PricingPage() {
     </section>
 
 <section className="relative w-full ">
-      <div className="mx-auto max-w-3xl px-4 py-20 sm:px-6 md:py-24 lg:px-8">
-        <div className="text-center space-y-4">
+      <div className="mx-auto max-w-5xl px-4 py-20 sm:px-6 md:py-24 lg:px-8">
+        <div className="mx-auto max-w-3xl space-y-4 text-center">
+          <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">How we compare</h2>
+          <p className="mx-auto max-w-2xl text-pretty text-muted-foreground">A detailed breakdown of what's included in every tier.</p>
+        </div>
+        <div className="mt-10 overflow-hidden rounded-2xl border bg-card">
+          <div className="grid grid-cols-3 items-center gap-4 border-b bg-muted/40 px-4 py-3 text-sm font-medium sm:px-6">
+            <span>Capability</span>
+            <span className="text-center">Us <Badge variant="secondary" className="ml-2 align-middle">recommended</Badge></span>
+            <span className="text-center text-muted-foreground">Others</span>
+          </div>
+          <ul className="divide-y text-sm">
+            <li className="grid grid-cols-3 items-center gap-4 px-4 py-4 sm:px-6">
+              <span className="font-medium"></span>
+              <span className="flex items-center justify-center gap-2 text-foreground"><Check className="h-4 w-4 text-primary" /></span>
+              <span className="flex items-center justify-center gap-2 text-muted-foreground"><X className="h-4 w-4" />Limited</span>
+            </li>
+            <li className="grid grid-cols-3 items-center gap-4 px-4 py-4 sm:px-6">
+              <span className="font-medium"></span>
+              <span className="flex items-center justify-center gap-2 text-foreground"><Check className="h-4 w-4 text-primary" /></span>
+              <span className="flex items-center justify-center gap-2 text-muted-foreground"><X className="h-4 w-4" />Limited</span>
+            </li>
+            <li className="grid grid-cols-3 items-center gap-4 px-4 py-4 sm:px-6">
+              <span className="font-medium"></span>
+              <span className="flex items-center justify-center gap-2 text-foreground"><Check className="h-4 w-4 text-primary" /></span>
+              <span className="flex items-center justify-center gap-2 text-muted-foreground"><X className="h-4 w-4" />Limited</span>
+            </li>
+            <li className="grid grid-cols-3 items-center gap-4 px-4 py-4 sm:px-6">
+              <span className="font-medium"></span>
+              <span className="flex items-center justify-center gap-2 text-foreground"><Check className="h-4 w-4 text-primary" /></span>
+              <span className="flex items-center justify-center gap-2 text-muted-foreground"><X className="h-4 w-4" />Limited</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+<section className="relative w-full ">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-20 sm:px-6 md:py-24 lg:grid-cols-3 lg:px-8">
+        <div className="space-y-4">
           
           <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">Frequently asked</h2>
-          
+          <p className="text-pretty text-muted-foreground">Common questions about our pricing and billing.</p>
         </div>
-        <Accordion type="single" collapsible className="mt-12 w-full">
-          <AccordionItem value="item-0">
-            <AccordionTrigger className="text-left text-base">What happens when I hit my bandwidth limit?</AccordionTrigger>
-            <AccordionContent className="text-muted-foreground">Sites continue serving with reduced priority. Upgrade anytime to lift limits instantly.</AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-1">
-            <AccordionTrigger className="text-left text-base">Can I use my own domain?</AccordionTrigger>
-            <AccordionContent className="text-muted-foreground">Yes! Custom domains with automatic SSL certificates. DNS setup takes 2 minutes.</AccordionContent>
-          </AccordionItem>
-          <AccordionItem value="item-2">
-            <AccordionTrigger className="text-left text-base">How fast are deployments?</AccordionTrigger>
-            <AccordionContent className="text-muted-foreground">Average 148ms from git push to live site. Preview deploys in under 30 seconds.</AccordionContent>
-          </AccordionItem>
-        </Accordion>
+        <dl className="lg:col-span-2 divide-y rounded-2xl border bg-card">
+          <div className="px-6 py-5">
+            <dt className="font-semibold">What happens if I exceed my bandwidth limit?</dt>
+            <dd className="mt-2 text-sm text-muted-foreground">We will never cut off your traffic. If you exceed your plan's included bandwidth, you will be charged a flat rate of $0.15 per additional GB at the end of your billing cycle.</dd>
+          </div>
+          <div className="px-6 py-5">
+            <dt className="font-semibold">Can I upgrade or downgrade at any time?</dt>
+            <dd className="mt-2 text-sm text-muted-foreground">Yes, you can change your plan at any time from your dashboard. Upgrades are prorated immediately, while downgrades take effect at the start of your next billing cycle.</dd>
+          </div>
+          <div className="px-6 py-5">
+            <dt className="font-semibold">Do you offer open-source discounts?</dt>
+            <dd className="mt-2 text-sm text-muted-foreground">Absolutely! We love open source. If you are hosting a non-commercial open-source project, contact our support team to get a free Pro tier upgrade.</dd>
+          </div>
+          <div className="px-6 py-5">
+            <dt className="font-semibold">How does team billing work?</dt>
+            <dd className="mt-2 text-sm text-muted-foreground">The Team plan includes 5 seats. Additional seats can be purchased for $15/month per user. Billing is consolidated to a single invoice for the organization.</dd>
+          </div>
+        </dl>
       </div>
     </section>
     </>

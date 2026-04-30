@@ -6,11 +6,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { type Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Product Features - Sycords Hosting",
-  description: "Discover Sycords features: instant deployments, monitoring, scaling, and team tools.",
+  title: "Platform Features - Sycords Hosting",
+  description: "Explore the powerful features that make Sycords the best place to host your modern web applications.",
 }
 
-export default function ProductPage() {
+export default function FeaturesPage() {
   return (
     <>
 <section className="relative w-full overflow-hidden">
@@ -19,9 +19,9 @@ export default function ProductPage() {
         <div className="space-y-6">
           
           <h1 className="text-balance text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">Ship something people remember.</h1>
-          
+          <p className="max-w-xl text-pretty text-lg text-muted-foreground">From hobby projects to enterprise applications, Sycords provides the tools, performance, and reliability you need to succeed.</p>
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-        <Button asChild size="lg"><Link href="#">Get started</Link></Button>
+        <Button asChild size="lg"><Link href="/login">Start Building</Link></Button>
         
       </div>
           
@@ -32,7 +32,7 @@ export default function ProductPage() {
             <div className="aspect-[4/3] w-full rounded-2xl bg-gradient-to-br from-primary/15 via-accent/10 to-card flex items-end p-6">
               <div className="space-y-2">
                 <span className="inline-flex items-center rounded-full bg-background/80 backdrop-blur px-3 py-1 text-xs font-medium text-foreground border">Live preview</span>
-                <p className="text-sm text-muted-foreground"></p>
+                <p className="text-sm text-muted-foreground">From hobby projects to enterprise applications, Sycords provides the tools, performance, and reliability you need to succeed.</p>
               </div>
             </div>
             <div className="mt-6 grid grid-cols-3 gap-3 text-sm">
@@ -54,18 +54,42 @@ export default function ProductPage() {
     </section>
 
 <section className="relative w-full ">
+      <div className="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 md:py-20 lg:grid-cols-2 lg:px-8">
+        <div className="space-y-4">
+          
+          
+          <p className="text-pretty text-muted-foreground">Our network is engineered from the ground up to deliver unparalleled performance.</p>
+        </div>
+        <dl className="grid gap-6 sm:grid-cols-2">
+          <div className="rounded-2xl border bg-card p-6">
+            <dt className="text-sm text-muted-foreground">Uptime SLA</dt>
+            <dd className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">99.99%</dd>
+          </div>
+          <div className="rounded-2xl border bg-card p-6">
+            <dt className="text-sm text-muted-foreground">Global Regions</dt>
+            <dd className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">35+</dd>
+          </div>
+          <div className="rounded-2xl border bg-card p-6">
+            <dt className="text-sm text-muted-foreground">Avg Deploy Time</dt>
+            <dd className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">2.4s</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+<section className="relative w-full ">
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-24 lg:px-8">
         <div className="mx-auto max-w-3xl text-center space-y-4">
           
           <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">Built for teams who care about the details</h2>
-          
+          <p className="mx-auto max-w-2xl text-pretty text-muted-foreground">Discover why engineering teams are migrating to Sycords.</p>
         </div>
         <div className="mt-16 space-y-16 sm:space-y-24">
           <div className="grid items-center gap-10 lg:grid-cols-2">
             <div className=" space-y-4">
               <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary"><Sparkles className="h-5 w-5" /></div>
               <h3 className="text-balance text-2xl font-semibold tracking-tight sm:text-3xl">Preview Deployments</h3>
-              <p className="text-pretty text-muted-foreground">Every PR gets its own preview URL. Review changes before they go live.</p>
+              <p className="text-pretty text-muted-foreground">Every pull request automatically generates a unique preview URL. Share it with your team, gather feedback, and merge with confidence knowing exactly what will go live.</p>
               
             </div>
             <div className=" aspect-[4/3] rounded-2xl border bg-gradient-to-br from-accent/30 via-primary/10 to-background" aria-hidden="true"></div>
@@ -73,8 +97,8 @@ export default function ProductPage() {
           <div className="grid items-center gap-10 lg:grid-cols-2">
             <div className="lg:order-2 space-y-4">
               <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary"><Sparkles className="h-5 w-5" /></div>
-              <h3 className="text-balance text-2xl font-semibold tracking-tight sm:text-3xl">Custom Domains</h3>
-              <p className="text-pretty text-muted-foreground">Connect your domain in 2 clicks. Automatic SSL certificates included.</p>
+              <h3 className="text-balance text-2xl font-semibold tracking-tight sm:text-3xl">Integrated Analytics</h3>
+              <p className="text-pretty text-muted-foreground">Understand your users without compromising their privacy. Get real-time insights into traffic, Core Web Vitals, and edge performance directly in your dashboard.</p>
               
             </div>
             <div className="lg:order-1 aspect-[4/3] rounded-2xl border bg-gradient-to-br from-accent/30 via-primary/10 to-background" aria-hidden="true"></div>
@@ -82,12 +106,23 @@ export default function ProductPage() {
           <div className="grid items-center gap-10 lg:grid-cols-2">
             <div className=" space-y-4">
               <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary"><Sparkles className="h-5 w-5" /></div>
-              <h3 className="text-balance text-2xl font-semibold tracking-tight sm:text-3xl">Deploy in 3 Steps</h3>
-              <p className="text-pretty text-muted-foreground"></p>
+              <h3 className="text-balance text-2xl font-semibold tracking-tight sm:text-3xl">Edge Middleware</h3>
+              <p className="text-pretty text-muted-foreground">Run custom logic at the edge before a request even hits your application. Perfect for authentication, A/B testing, and personalized content delivery.</p>
               
             </div>
             <div className=" aspect-[4/3] rounded-2xl border bg-gradient-to-br from-accent/30 via-primary/10 to-background" aria-hidden="true"></div>
           </div>
+        </div>
+      </div>
+    </section>
+
+<section className="relative w-full ">
+      <div className="mx-auto max-w-5xl px-4 py-20 text-center sm:px-6 md:py-24 lg:px-8">
+        <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">Ready when you are</h2>
+        <p className="mx-auto mt-4 max-w-2xl text-pretty text-muted-foreground">Deploy your first project in less time than it took to read this page.</p>
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <Button asChild size="lg"><Link href="/login">Deploy Now</Link></Button>
+          
         </div>
       </div>
     </section>
