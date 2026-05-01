@@ -8,8 +8,8 @@ import { Label } from "@/components/ui/label"
 import { type Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Contact Us | sycords Cloud Hosting Support",
-  description: "Have questions or need assistance? Contact sycords support and sales team via form, email, or phone. We're here to help you succeed.",
+  title: "Contact Sycords Support & Sales Team",
+  description: "Have questions about Sycords hosting? Reach out to our sales or support team for assistance with your projects.",
 }
 
 export default function ContactPage() {
@@ -20,7 +20,7 @@ export default function ContactPage() {
       <div className="mx-auto max-w-4xl px-4 py-24 text-center sm:px-6 md:py-32 lg:px-8">
         
         <h1 className="text-balance text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">Ship something people remember.</h1>
-        
+        <p className="mx-auto mt-6 max-w-2xl text-pretty text-lg text-muted-foreground">Whether you have a question about features, pricing, or need technical assistance, our team is ready to assist you.</p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <Button asChild size="lg"><Link href="#">Get started</Link></Button>
           
@@ -34,7 +34,7 @@ export default function ContactPage() {
         <div className="space-y-5">
           
           <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">Tell us about your project</h2>
-          <p className="text-pretty text-muted-foreground">Fill out the form below and our team will get back to you as soon as possible.</p>
+          <p className="text-pretty text-muted-foreground">Fill out the form below, and we'll get back to you as soon as possible.</p>
           
         </div>
         <div className="rounded-2xl border bg-card p-6 sm:p-8">
@@ -72,16 +72,16 @@ export default function ContactPage() {
         </div>
         <Accordion type="single" collapsible className="mt-12 w-full">
           <AccordionItem value="item-0">
-            <AccordionTrigger className="text-left text-base">How quickly do you respond to support tickets?</AccordionTrigger>
-            <AccordionContent className="text-muted-foreground">Our support team aims to respond to all inquiries within 2-4 hours during business hours, and critical issues are addressed immediately 24/7.</AccordionContent>
+            <AccordionTrigger className="text-left text-base">What's the best way to get technical support?</AccordionTrigger>
+            <AccordionContent className="text-muted-foreground">For technical issues, please use the support portal within your Sycords dashboard. For Pro and Enterprise users, direct email/chat is available.</AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-1">
-            <AccordionTrigger className="text-left text-base">Where can I find documentation?</AccordionTrigger>
-            <AccordionContent className="text-muted-foreground">Our comprehensive documentation and knowledge base are available at docs.sycords.com, covering everything from setup to advanced configurations.</AccordionContent>
+            <AccordionTrigger className="text-left text-base">How can I get a demo of Sycords?</AccordionTrigger>
+            <AccordionContent className="text-muted-foreground">If you're interested in an Enterprise plan or a detailed product walkthrough, please select 'Sales Inquiry' in the contact form, and we'll schedule a demo.</AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
-            <AccordionTrigger className="text-left text-base">Do you offer phone support?</AccordionTrigger>
-            <AccordionContent className="text-muted-foreground">Phone support is available for Pro and Enterprise plan customers during business hours. Email and chat support are available for all plans.</AccordionContent>
+            <AccordionTrigger className="text-left text-base">I have a billing question, who should I contact?</AccordionTrigger>
+            <AccordionContent className="text-muted-foreground">For all billing-related questions, please use the 'Billing Inquiry' option in the contact form, or refer to the billing section in your dashboard.</AccordionContent>
           </AccordionItem>
         </Accordion>
       </div>

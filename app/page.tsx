@@ -9,8 +9,8 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { type Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "sycords | Fast, Secure & Scalable Cloud Hosting for Developers",
-  description: "Deploy your projects with sycords. Experience lightning-fast SSDs, global data centers, advanced security, and an intuitive dashboard for ultimate control.",
+  title: "Sycords: Scalable Cloud Hosting for Modern Web Apps & Databases",
+  description: "Deploy your web applications and databases with Sycords. Enjoy blazing-fast performance, robust security, and seamless scalability for developers.",
 }
 
 export default function HomePage() {
@@ -22,9 +22,9 @@ export default function HomePage() {
         <div className="mx-auto max-w-3xl text-center space-y-5">
           
           <h1 className="text-balance text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">Ship something people remember.</h1>
-          
+          <p className="mx-auto max-w-2xl text-pretty text-lg text-muted-foreground">Sycords offers blazing-fast, secure, and scalable cloud hosting tailored for modern web applications and databases. Focus on coding, we'll handle the rest.</p>
           <div className="flex flex-wrap items-center justify-center gap-3">
-            <Button asChild size="lg"><Link href="/login">Start Hosting Free</Link></Button>
+            <Button asChild size="lg"><Link href="/pricing">Start Hosting Now</Link></Button>
             <Button asChild size="lg" variant="outline"><Link href="/features">Explore Features</Link></Button>
           </div>
         </div>
@@ -60,11 +60,12 @@ export default function HomePage() {
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <p className="text-center text-sm font-medium uppercase tracking-wider text-muted-foreground">Trusted by teams everywhere</p>
         <div className="mt-8 grid grid-cols-2 items-center justify-items-center gap-x-8 gap-y-6 sm:grid-cols-3 lg:grid-cols-6">
-          <div className="text-base font-semibold tracking-tight text-muted-foreground/70 transition hover:text-foreground">Stripe</div>
           <div className="text-base font-semibold tracking-tight text-muted-foreground/70 transition hover:text-foreground">Vercel</div>
-          <div className="text-base font-semibold tracking-tight text-muted-foreground/70 transition hover:text-foreground">PlanetScale</div>
+          <div className="text-base font-semibold tracking-tight text-muted-foreground/70 transition hover:text-foreground">Next.js</div>
           <div className="text-base font-semibold tracking-tight text-muted-foreground/70 transition hover:text-foreground">Supabase</div>
-          <div className="text-base font-semibold tracking-tight text-muted-foreground/70 transition hover:text-foreground">Upstash</div>
+          <div className="text-base font-semibold tracking-tight text-muted-foreground/70 transition hover:text-foreground">Turso</div>
+          <div className="text-base font-semibold tracking-tight text-muted-foreground/70 transition hover:text-foreground">PlanetScale</div>
+          <div className="text-base font-semibold tracking-tight text-muted-foreground/70 transition hover:text-foreground">Redis</div>
         </div>
       </div>
     </section>
@@ -74,38 +75,38 @@ export default function HomePage() {
         <div className="mx-auto max-w-3xl text-center space-y-4">
           
           <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">Built for teams who care about the details</h2>
-          
+          <p className="mx-auto max-w-2xl text-pretty text-muted-foreground">From instant deployments to global CDN, Sycords provides the tools you need to succeed.</p>
         </div>
         <div className="mt-12 grid gap-4 lg:grid-cols-3">
           <Card className="lg:col-span-2 relative overflow-hidden border-border/60">
             <CardHeader>
               <div className="mb-2 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary"><Sparkles className="h-5 w-5" /></div>
-              <CardTitle className="text-xl">Blazing Fast SSDs</CardTitle>
-              <CardDescription className="text-base">Optimized for speed, your applications load instantly and perform flawlessly.</CardDescription>
+              <CardTitle className="text-xl">Instant Global Deployments</CardTitle>
+              <CardDescription className="text-base">Launch your applications across our worldwide network in seconds, ensuring low latency for all users.</CardDescription>
             </CardHeader>
             
           </Card>
           <Card className="lg:col-span-1 relative overflow-hidden border-border/60">
             <CardHeader>
               <div className="mb-2 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary"><Sparkles className="h-5 w-5" /></div>
-              <CardTitle className="text-xl">Global Data Centers</CardTitle>
-              <CardDescription className="text-base">Choose from multiple locations across the globe for low latency and high availability.</CardDescription>
+              <CardTitle className="text-xl">Scalable Database Hosting</CardTitle>
+              <CardDescription className="text-base">Connect your Turso, Supabase, or PlanetScale databases with optimized, high-availability hosting.</CardDescription>
             </CardHeader>
             
           </Card>
           <Card className="lg:col-span-1 relative overflow-hidden border-border/60">
             <CardHeader>
               <div className="mb-2 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary"><Sparkles className="h-5 w-5" /></div>
-              <CardTitle className="text-xl">Advanced Security</CardTitle>
-              <CardDescription className="text-base">DDoS protection, enterprise-grade firewalls, and regular backups keep your data safe.</CardDescription>
+              <CardTitle className="text-xl">Integrated CI/CD Pipelines</CardTitle>
+              <CardDescription className="text-base">Automate your deployments with seamless Git integrations and custom build processes.</CardDescription>
             </CardHeader>
             
           </Card>
           <Card className="lg:col-span-2 relative overflow-hidden border-border/60">
             <CardHeader>
               <div className="mb-2 inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary"><Sparkles className="h-5 w-5" /></div>
-              <CardTitle className="text-xl">Scalable Resources</CardTitle>
-              <CardDescription className="text-base">Easily upgrade CPU, RAM, and storage as your project grows, without downtime.</CardDescription>
+              <CardTitle className="text-xl">Real-time Analytics &amp; Monitoring</CardTitle>
+              <CardDescription className="text-base">Gain deep insights into your application's performance and user activity with intuitive dashboards.</CardDescription>
             </CardHeader>
             
           </Card>
@@ -122,69 +123,36 @@ export default function HomePage() {
             <dt className="mt-2 text-sm text-muted-foreground">Uptime Guarantee</dt>
           </div>
           <div className="rounded-2xl border bg-card p-6 text-center">
-            <dd className="text-3xl font-semibold tracking-tight sm:text-4xl">12,000+</dd>
-            <dt className="mt-2 text-sm text-muted-foreground">Active Projects</dt>
+            <dd className="text-3xl font-semibold tracking-tight sm:text-4xl">12+</dd>
+            <dt className="mt-2 text-sm text-muted-foreground">Global Regions</dt>
           </div>
           <div className="rounded-2xl border bg-card p-6 text-center">
-            <dd className="text-3xl font-semibold tracking-tight sm:text-4xl">250+</dd>
-            <dt className="mt-2 text-sm text-muted-foreground">GB/s Network</dt>
+            <dd className="text-3xl font-semibold tracking-tight sm:text-4xl">200&lt;</dd>
+            <dt className="mt-2 text-sm text-muted-foreground">ms Average Latency</dt>
           </div>
           <div className="rounded-2xl border bg-card p-6 text-center">
             <dd className="text-3xl font-semibold tracking-tight sm:text-4xl">10+</dd>
-            <dt className="mt-2 text-sm text-muted-foreground">Global Regions</dt>
+            <dt className="mt-2 text-sm text-muted-foreground">TB Data Transferred Daily</dt>
           </div>
         </dl>
       </div>
     </section>
 
 <section className="relative w-full ">
-      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 md:py-24 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center space-y-4">
-          
-          <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">Loved by people who care about quality</h2>
-          
-        </div>
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          <Card className="border-border/60">
-            <CardContent className="p-6">
-              <Quote className="h-6 w-6 text-primary/40" />
-              <p className="mt-4 text-pretty text-base leading-relaxed">"Switching to sycords was a game-changer. Our site speed improved dramatically, and their support is top-notch."</p>
-              <div className="mt-6 flex items-center gap-3">
-                <Avatar className="h-9 w-9"><AvatarFallback>AC</AvatarFallback></Avatar>
-                <div>
-                  <p className="text-sm font-semibold">Alex Chen</p>
-                  <p className="text-xs text-muted-foreground">CTO, InnovateTech</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-          <Card className="border-border/60">
-            <CardContent className="p-6">
-              <Quote className="h-6 w-6 text-primary/40" />
-              <p className="mt-4 text-pretty text-base leading-relaxed">"The dashboard is incredibly easy to use, even for complex deployments. sycords makes managing our infrastructure a breeze."</p>
-              <div className="mt-6 flex items-center gap-3">
-                <Avatar className="h-9 w-9"><AvatarFallback>SL</AvatarFallback></Avatar>
-                <div>
-                  <p className="text-sm font-semibold">Sarah Lee</p>
-                  <p className="text-xs text-muted-foreground">Lead Developer, PixelPlex</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-          <Card className="border-border/60">
-            <CardContent className="p-6">
-              <Quote className="h-6 w-6 text-primary/40" />
-              <p className="mt-4 text-pretty text-base leading-relaxed">"Reliability is key for our e-commerce business. sycords delivers consistent performance, allowing us to focus on growth."</p>
-              <div className="mt-6 flex items-center gap-3">
-                <Avatar className="h-9 w-9"><AvatarFallback>MD</AvatarFallback></Avatar>
-                <div>
-                  <p className="text-sm font-semibold">Mark Davis</p>
-                  <p className="text-xs text-muted-foreground">Founder, EcomFlow</p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+      <div className="mx-auto max-w-5xl px-4 py-20 sm:px-6 md:py-28 lg:px-8">
+        
+        <h2 className="mx-auto max-w-3xl text-balance text-center text-3xl font-semibold tracking-tight sm:text-4xl">Loved by people who care about quality</h2>
+        <figure className="mt-12 rounded-3xl border bg-card p-8 sm:p-12">
+          <Quote className="h-10 w-10 text-primary/40" />
+          <blockquote className="mt-6 text-pretty text-2xl font-medium leading-relaxed sm:text-3xl">"Sycords transformed our deployment process. We went from hours of setup to minutes, and the performance uplift was immediate. Truly a game-changer for our startup."</blockquote>
+          <figcaption className="mt-8 flex items-center gap-4">
+            <Avatar><AvatarFallback>AC</AvatarFallback></Avatar>
+            <div>
+              <p className="font-semibold">Alex Chen</p>
+              <p className="text-sm text-muted-foreground">CTO, Innovate Labs</p>
+            </div>
+          </figcaption>
+        </figure>
       </div>
     </section>
 
@@ -193,7 +161,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-3xl text-center space-y-4">
           
           <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">Pricing built for every stage</h2>
-          
+          <p className="mx-auto max-w-2xl text-pretty text-muted-foreground">Choose the plan that fits your project's needs. Scale up or down anytime.</p>
         </div>
         <div className="mt-12 grid gap-6 lg:grid-cols-3">
           <Card className="relative ">
@@ -202,20 +170,20 @@ export default function HomePage() {
               <CardTitle className="text-xl">Starter</CardTitle>
               <CardDescription></CardDescription>
               <div className="mt-4 flex items-baseline gap-1">
-                <span className="text-4xl font-semibold tracking-tight">$9</span>
+                <span className="text-4xl font-semibold tracking-tight">$0</span>
                 <span className="text-sm text-muted-foreground">month</span>
               </div>
             </CardHeader>
             <CardContent>
               <Separator className="mb-6" />
               <ul className="space-y-3 text-sm">
-                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />1 vCPU</li>
-                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />2GB RAM</li>
-                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />50GB SSD Storage</li>
-                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />1TB Data Transfer</li>
-                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />Basic Support</li>
+                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />1 Project</li>
+                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />1GB Bandwidth</li>
+                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />100GB Storage</li>
+                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />Community Support</li>
+                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />Basic Analytics</li>
               </ul>
-              <Button asChild variant="outline" className="mt-6 w-full"><Link href="#">Choose plan</Link></Button>
+              <Button asChild variant="outline" className="mt-6 w-full"><Link href="/signup">Get Started Free</Link></Button>
             </CardContent>
           </Card>
           <Card className="relative ring-2 ring-primary shadow-xl shadow-primary/10 scale-[1.02]">
@@ -231,14 +199,13 @@ export default function HomePage() {
             <CardContent>
               <Separator className="mb-6" />
               <ul className="space-y-3 text-sm">
-                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />4 vCPU</li>
-                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />8GB RAM</li>
-                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />200GB SSD Storage</li>
-                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />5TB Data Transfer</li>
-                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />Advanced Security Suite</li>
-                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />Priority Support</li>
+                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />5 Projects</li>
+                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />500GB Bandwidth</li>
+                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />1TB Storage</li>
+                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />Priority Email Support</li>
+                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />Advanced Analytics &amp; Monitoring</li>
               </ul>
-              <Button asChild variant="default" className="mt-6 w-full"><Link href="#">Choose plan</Link></Button>
+              <Button asChild variant="default" className="mt-6 w-full"><Link href="/pricingpro">Choose Pro</Link></Button>
             </CardContent>
           </Card>
           <Card className="relative ">
@@ -247,21 +214,20 @@ export default function HomePage() {
               <CardTitle className="text-xl">Enterprise</CardTitle>
               <CardDescription></CardDescription>
               <div className="mt-4 flex items-baseline gap-1">
-                <span className="text-4xl font-semibold tracking-tight">$99</span>
-                <span className="text-sm text-muted-foreground">month</span>
+                <span className="text-4xl font-semibold tracking-tight">Custom</span>
+                <span className="text-sm text-muted-foreground">plan</span>
               </div>
             </CardHeader>
             <CardContent>
               <Separator className="mb-6" />
               <ul className="space-y-3 text-sm">
-                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />Dedicated Resources</li>
-                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />32GB RAM</li>
-                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />1TB SSD Storage</li>
-                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />Unlimited Data Transfer</li>
-                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />24/7 Dedicated Support</li>
-                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />99.99% SLA Guarantee</li>
+                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />Unlimited Projects</li>
+                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />Dedicated Bandwidth</li>
+                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />Custom Storage Solutions</li>
+                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />24/7 Phone &amp; Slack Support</li>
+                <li className="flex items-start gap-2"><Check className="mt-0.5 h-4 w-4 text-primary" />Dedicated Account Manager</li>
               </ul>
-              <Button asChild variant="outline" className="mt-6 w-full"><Link href="#">Choose plan</Link></Button>
+              <Button asChild variant="outline" className="mt-6 w-full"><Link href="/contact">Contact Sales</Link></Button>
             </CardContent>
           </Card>
         </div>
@@ -277,20 +243,20 @@ export default function HomePage() {
         </div>
         <Accordion type="single" collapsible className="mt-12 w-full">
           <AccordionItem value="item-0">
-            <AccordionTrigger className="text-left text-base">What kind of hosting does sycords offer?</AccordionTrigger>
-            <AccordionContent className="text-muted-foreground">sycords specializes in high-performance cloud hosting, optimized for modern web applications, databases, and APIs. We provide virtual private servers (VPS) with full root access.</AccordionContent>
+            <AccordionTrigger className="text-left text-base">What types of applications can I host?</AccordionTrigger>
+            <AccordionContent className="text-muted-foreground">Sycords is optimized for modern web applications including Next.js, React, Vue, Svelte, static sites, and various backend services. We support Docker deployments and serverless functions.</AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-1">
-            <AccordionTrigger className="text-left text-base">Can I migrate my existing website?</AccordionTrigger>
-            <AccordionContent className="text-muted-foreground">Yes, we offer free migration assistance for new customers. Our support team will help you transfer your data and configure your services to sycords seamlessly.</AccordionContent>
+            <AccordionTrigger className="text-left text-base">How does Sycords ensure high availability?</AccordionTrigger>
+            <AccordionContent className="text-muted-foreground">We leverage a globally distributed infrastructure with automatic failover, redundant systems, and continuous monitoring to ensure your applications remain online and accessible.</AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-2">
-            <AccordionTrigger className="text-left text-base">What payment methods do you accept?</AccordionTrigger>
-            <AccordionContent className="text-muted-foreground">We accept all major credit cards, including Visa, MasterCard, American Express, and Discover. We also support PayPal for convenient payments.</AccordionContent>
+            <AccordionTrigger className="text-left text-base">Can I connect my existing database?</AccordionTrigger>
+            <AccordionContent className="text-muted-foreground">Yes, Sycords provides seamless integration with popular databases like Turso, Supabase, PlanetScale, PostgreSQL, and MongoDB. You can easily connect and manage your data sources.</AccordionContent>
           </AccordionItem>
           <AccordionItem value="item-3">
-            <AccordionTrigger className="text-left text-base">Do you offer a money-back guarantee?</AccordionTrigger>
-            <AccordionContent className="text-muted-foreground">Yes, we offer a 30-day money-back guarantee on all our hosting plans. If you're not satisfied, we'll refund your purchase, no questions asked.</AccordionContent>
+            <AccordionTrigger className="text-left text-base">What kind of support is available?</AccordionTrigger>
+            <AccordionContent className="text-muted-foreground">Our Starter plan includes community support. Pro plans get priority email support, and Enterprise plans receive 24/7 dedicated phone and Slack support with an account manager.</AccordionContent>
           </AccordionItem>
         </Accordion>
       </div>
@@ -299,10 +265,10 @@ export default function HomePage() {
 <section className="relative w-full ">
       <div className="mx-auto max-w-5xl px-4 py-20 text-center sm:px-6 md:py-24 lg:px-8">
         <h2 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">Ready when you are</h2>
-        <p className="mx-auto mt-4 max-w-2xl text-pretty text-muted-foreground">Start now and feel the difference within minutes.</p>
+        <p className="mx-auto mt-4 max-w-2xl text-pretty text-muted-foreground">Join thousands of developers who trust Sycords for their mission-critical applications.</p>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <Button asChild size="lg"><Link href="#">Get started</Link></Button>
-          
+          <Button asChild size="lg"><Link href="/pricing">Deploy Your First Project</Link></Button>
+          <Button asChild size="lg" variant="outline"><Link href="/contact">Talk to Sales</Link></Button>
         </div>
       </div>
     </section>

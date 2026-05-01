@@ -10,9 +10,9 @@ export function getDbClient(): Client {
   if (client) return client
   const url = process.env.TURSO_DATABASE_URL
   const authToken = process.env.TURSO_AUTH_TOKEN
-  if (!url || !authToken) {
+  if (!url) {
     throw new Error(
-      "Missing Turso environment variables: TURSO_DATABASE_URL and TURSO_AUTH_TOKEN.",
+      "Missing TURSO_DATABASE_URL. Add it to your project environment variables.",
     )
   }
   client = createClient({ url, authToken })
@@ -20,5 +20,5 @@ export function getDbClient(): Client {
 }
 
 export function hasDbEnv(): boolean {
-  return Boolean(process.env.TURSO_DATABASE_URL && process.env.TURSO_AUTH_TOKEN)
+  return Boolean(process.env.TURSO_DATABASE_URL)
 }

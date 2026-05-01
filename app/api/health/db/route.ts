@@ -8,7 +8,7 @@ export const dynamic = "force-dynamic"
 export async function GET() {
   if (!hasDbEnv()) {
     return NextResponse.json(
-      { ok: false, error: "Missing Turso environment variables: TURSO_DATABASE_URL and TURSO_AUTH_TOKEN." },
+      { ok: false, error: "Missing TURSO_DATABASE_URL environment variable." },
       { status: 503 },
     )
   }

@@ -5,7 +5,8 @@ import { siteConfig } from "@/lib/site-config"
 
 const navItems = siteConfig.navLinks
 const socialLinks = siteConfig.socialLinks
-const footerInfo = siteConfig.contact ?? { email: "", phone: "", address: "" }
+type FooterInfo = { email?: string; phone?: string; address?: string }
+const footerInfo: FooterInfo = siteConfig.contact ?? { email: undefined, phone: undefined, address: undefined }
 const footerCta = siteConfig.footerCta
 
 export function SiteFooter() {
