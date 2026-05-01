@@ -4,10 +4,10 @@
 export const generatedManifest = {
   "brief": {
     "projectName": "sycords",
-    "tagline": "High-performance hosting for modern developers.",
-    "description": "Deploy, scale, and manage your applications with Sycords. Lightning-fast infrastructure, global edge network, and seamless integrations.",
-    "audience": "Developers, startups, and enterprise engineering teams.",
-    "voice": "Technical, authoritative, modern, and reliable.",
+    "tagline": "High-Performance Hosting, Effortlessly Managed.",
+    "description": "sycords provides robust, scalable, and secure hosting solutions designed for developers and businesses. Launch and manage your projects with unparalleled speed and control.",
+    "audience": "Developers, startups, small to medium businesses, agencies seeking reliable and flexible hosting.",
+    "voice": "Professional, empowering, efficient, and technically confident.",
     "themePreset": "saas",
     "navLinks": [
       {
@@ -19,28 +19,32 @@ export const generatedManifest = {
         "href": "/features"
       },
       {
-        "label": "Infrastructure",
-        "href": "/infrastructure"
-      },
-      {
         "label": "Pricing",
         "href": "/pricing"
       },
       {
-        "label": "Sign In",
+        "label": "Contact",
+        "href": "/contact"
+      },
+      {
+        "label": "Login",
         "href": "/login"
+      },
+      {
+        "label": "Dashboard",
+        "href": "/dashboard"
       }
     ],
     "primaryCta": {
-      "label": "Start Deploying",
+      "label": "Start Hosting Free",
       "href": "/login"
     },
     "secondaryCta": {
-      "label": "View Pricing",
+      "label": "View Plans",
       "href": "/pricing"
     },
     "footerCta": {
-      "label": "Deploy Now",
+      "label": "Ready to Launch Your Next Big Idea?",
       "href": "/login"
     },
     "contact": {
@@ -54,11 +58,11 @@ export const generatedManifest = {
         "href": "#"
       },
       {
-        "label": "GitHub",
+        "label": "LinkedIn",
         "href": "#"
       },
       {
-        "label": "Discord",
+        "label": "GitHub",
         "href": "#"
       }
     ]
@@ -115,44 +119,44 @@ export const generatedManifest = {
   "pages": [
     {
       "path": "/",
-      "title": "Sycords | Next-Generation Cloud Hosting",
-      "metaTitle": "Sycords - High-Performance Hosting for Modern Developers",
-      "metaDescription": "Deploy your applications globally in milliseconds. Sycords provides auto-scaling infrastructure, global edge networks, and seamless developer workflows.",
+      "title": "sycords - High-Performance Hosting, Effortlessly Managed",
+      "metaTitle": "sycords | Fast, Secure & Scalable Cloud Hosting for Developers",
+      "metaDescription": "Deploy your projects with sycords. Experience lightning-fast SSDs, global data centers, advanced security, and an intuitive dashboard for ultimate control.",
       "sections": [
         {
           "kind": "hero",
           "variant": "saas-dashboard",
           "primaryCta": {
-            "label": "Start for free",
+            "label": "Start Hosting Free",
             "href": "/login"
           },
           "secondaryCta": {
-            "label": "Read the docs",
-            "href": "/infrastructure"
+            "label": "Explore Features",
+            "href": "/features"
           }
         },
         {
           "kind": "logos",
-          "variant": "marquee-static",
+          "variant": "row",
           "items": [
             {
-              "label": "Acme Corp",
+              "label": "Stripe",
               "highlighted": false
             },
             {
-              "label": "GlobalTech",
+              "label": "Vercel",
               "highlighted": false
             },
             {
-              "label": "Nexus Studios",
+              "label": "PlanetScale",
               "highlighted": false
             },
             {
-              "label": "Quantum AI",
+              "label": "Supabase",
               "highlighted": false
             },
             {
-              "label": "Vanguard Systems",
+              "label": "Upstash",
               "highlighted": false
             }
           ]
@@ -162,23 +166,33 @@ export const generatedManifest = {
           "variant": "bento",
           "items": [
             {
-              "title": "Global Edge Network",
-              "description": "Your code is distributed across 35+ regions worldwide, ensuring sub-50ms latency for your users.",
+              "title": "Blazing Fast SSDs",
+              "description": "Optimized for speed, your applications load instantly and perform flawlessly.",
               "highlighted": false
             },
             {
-              "title": "Instant Rollbacks",
-              "description": "Bad deployment? Revert to any previous state in less than a second with atomic deployments.",
+              "title": "Global Data Centers",
+              "description": "Choose from multiple locations across the globe for low latency and high availability.",
               "highlighted": false
             },
             {
-              "title": "Built-in CI/CD",
-              "description": "Connect your GitHub repository and we'll automatically build and deploy on every push.",
+              "title": "Advanced Security",
+              "description": "DDoS protection, enterprise-grade firewalls, and regular backups keep your data safe.",
               "highlighted": false
             },
             {
-              "title": "Serverless Database Integration",
-              "description": "Native connections to Turso and other serverless databases at the edge.",
+              "title": "Scalable Resources",
+              "description": "Easily upgrade CPU, RAM, and storage as your project grows, without downtime.",
+              "highlighted": false
+            },
+            {
+              "title": "Intuitive Dashboard",
+              "description": "Manage all your servers, domains, and databases from one powerful, user-friendly interface.",
+              "highlighted": false
+            },
+            {
+              "title": "24/7 Expert Support",
+              "description": "Our dedicated team is always here to help you succeed, day or night.",
               "highlighted": false
             }
           ]
@@ -188,198 +202,101 @@ export const generatedManifest = {
           "variant": "card-row",
           "items": [
             {
-              "label": "Guaranteed Uptime",
-              "value": "99.99%",
+              "label": "Uptime Guarantee",
+              "value": "99.99",
+              "suffix": "%",
               "highlighted": false
             },
             {
-              "label": "Global Edge Nodes",
-              "value": "35+",
+              "label": "Active Projects",
+              "value": "12,000",
+              "suffix": "+",
               "highlighted": false
             },
             {
-              "label": "Average Deploy Time",
-              "value": "12s",
+              "label": "GB/s Network",
+              "value": "250",
+              "suffix": "+",
               "highlighted": false
             },
             {
-              "label": "Requests Handled Daily",
-              "value": "2B+",
+              "label": "Global Regions",
+              "value": "10",
+              "suffix": "+",
               "highlighted": false
             }
           ]
         },
         {
           "kind": "testimonials",
-          "variant": "spotlight",
+          "variant": "grid-cards",
           "items": [
             {
-              "quote": "Moving to Sycords cut our deployment times by 80%. The global edge network means our application feels instantaneous no matter where our users are.",
-              "author": "Sarah Chen",
-              "role": "CTO at Nexus Studios",
-              "initials": "SC",
+              "quote": "Switching to sycords was a game-changer. Our site speed improved dramatically, and their support is top-notch.",
+              "author": "Alex Chen",
+              "role": "CTO, InnovateTech",
+              "initials": "AC",
+              "highlighted": false
+            },
+            {
+              "quote": "The dashboard is incredibly easy to use, even for complex deployments. sycords makes managing our infrastructure a breeze.",
+              "author": "Sarah Lee",
+              "role": "Lead Developer, PixelPlex",
+              "initials": "SL",
+              "highlighted": false
+            },
+            {
+              "quote": "Reliability is key for our e-commerce business. sycords delivers consistent performance, allowing us to focus on growth.",
+              "author": "Mark Davis",
+              "role": "Founder, EcomFlow",
+              "initials": "MD",
               "highlighted": false
             }
           ]
-        },
-        {
-          "kind": "cta",
-          "variant": "banner",
-          "primaryCta": {
-            "label": "Create an Account",
-            "href": "/login"
-          }
-        }
-      ]
-    },
-    {
-      "path": "/infrastructure",
-      "title": "Global Infrastructure",
-      "metaTitle": "Sycords Infrastructure - Built for Global Scale",
-      "metaDescription": "Explore the Sycords global edge network. NVMe storage, Anycast routing, and enterprise-grade DDoS protection built in.",
-      "sections": [
-        {
-          "kind": "hero",
-          "variant": "split",
-          "primaryCta": {
-            "label": "View Network Map",
-            "href": "#network"
-          }
-        },
-        {
-          "kind": "process",
-          "variant": "timeline",
-          "items": [
-            {
-              "title": "Anycast Routing",
-              "description": "The user's request is instantly routed to the geographically closest edge node.",
-              "highlighted": false
-            },
-            {
-              "title": "DDoS Mitigation",
-              "description": "Traffic is scrubbed in real-time to prevent malicious attacks from reaching your application.",
-              "highlighted": false
-            },
-            {
-              "title": "Edge Cache Hit",
-              "description": "Static assets and cached API responses are served directly from the edge in milliseconds.",
-              "highlighted": false
-            },
-            {
-              "title": "Serverless Compute",
-              "description": "Dynamic requests spin up isolated V8 isolates to execute your application logic securely.",
-              "highlighted": false
-            }
-          ]
-        },
-        {
-          "kind": "feature-grid",
-          "variant": "icon-grid",
-          "items": [
-            {
-              "title": "NVMe Storage",
-              "description": "All persistent volumes are backed by redundant NVMe drives for maximum IOPS.",
-              "highlighted": false
-            },
-            {
-              "title": "Automated SSL",
-              "description": "Zero-config TLS 1.3 certificates provisioned and renewed automatically.",
-              "highlighted": false
-            },
-            {
-              "title": "VPC Peering",
-              "description": "Securely connect your Sycords deployments to your existing AWS or GCP infrastructure.",
-              "highlighted": false
-            }
-          ]
-        },
-        {
-          "kind": "cta",
-          "variant": "split",
-          "primaryCta": {
-            "label": "Deploy Now",
-            "href": "/login"
-          }
-        }
-      ]
-    },
-    {
-      "path": "/pricing",
-      "title": "Pricing",
-      "metaTitle": "Sycords Pricing - Simple, Transparent Hosting",
-      "metaDescription": "Predictable pricing for projects of all sizes. Start for free and scale as you grow with usage-based billing.",
-      "sections": [
-        {
-          "kind": "hero",
-          "variant": "centered",
-          "primaryCta": {
-            "label": "Start Building",
-            "href": "/login"
-          }
         },
         {
           "kind": "pricing",
-          "variant": "two-tier-toggle",
+          "variant": "three-tier",
           "items": [
             {
-              "title": "Hobby",
-              "description": "Perfect for personal projects and experiments.",
-              "price": "$0",
-              "period": "forever",
+              "title": "Starter",
+              "price": "$9",
+              "period": "month",
               "features": [
-                "100GB Bandwidth / month",
-                "1,000 Serverless Invocations / day",
-                "Community Support",
-                "Automated SSL"
+                "1 vCPU",
+                "2GB RAM",
+                "50GB SSD Storage",
+                "1TB Data Transfer",
+                "Basic Support"
               ],
-              "cta": {
-                "label": "Deploy for free",
-                "href": "/login"
-              },
               "highlighted": false
             },
             {
               "title": "Pro",
-              "description": "For production applications and growing teams.",
-              "price": "$20",
-              "period": "per user / month",
+              "price": "$29",
+              "period": "month",
               "features": [
-                "1TB Bandwidth / month",
-                "Unlimited Serverless Invocations",
-                "Email Support",
-                "Custom Domains",
-                "Team Collaboration"
+                "4 vCPU",
+                "8GB RAM",
+                "200GB SSD Storage",
+                "5TB Data Transfer",
+                "Advanced Security Suite",
+                "Priority Support"
               ],
-              "cta": {
-                "label": "Start 14-day trial",
-                "href": "/login"
-              },
               "highlighted": true
-            }
-          ]
-        },
-        {
-          "kind": "comparison",
-          "variant": "table",
-          "items": [
-            {
-              "title": "Bandwidth",
-              "description": "100GB on Hobby, 1TB on Pro.",
-              "highlighted": false
             },
             {
-              "title": "Edge Regions",
-              "description": "US East only on Hobby, Global (35+ regions) on Pro.",
-              "highlighted": false
-            },
-            {
-              "title": "Build Minutes",
-              "description": "100 mins/mo on Hobby, 3,000 mins/mo on Pro.",
-              "highlighted": false
-            },
-            {
-              "title": "Support SLA",
-              "description": "Community on Hobby, 24-hour response on Pro.",
+              "title": "Enterprise",
+              "price": "$99",
+              "period": "month",
+              "features": [
+                "Dedicated Resources",
+                "32GB RAM",
+                "1TB SSD Storage",
+                "Unlimited Data Transfer",
+                "24/7 Dedicated Support",
+                "99.99% SLA Guarantee"
+              ],
               "highlighted": false
             }
           ]
@@ -389,18 +306,230 @@ export const generatedManifest = {
           "variant": "accordion",
           "items": [
             {
-              "title": "What happens if I exceed my bandwidth limit?",
-              "description": "On the Pro plan, additional bandwidth is billed at $0.15 per GB. On the Hobby plan, your deployments will be paused until the next billing cycle unless you upgrade.",
+              "title": "What kind of hosting does sycords offer?",
+              "description": "sycords specializes in high-performance cloud hosting, optimized for modern web applications, databases, and APIs. We provide virtual private servers (VPS) with full root access.",
               "highlighted": false
             },
             {
-              "title": "Do you offer custom enterprise plans?",
-              "description": "Yes. If you need dedicated hardware, custom SLAs, or volume discounts, please contact our sales team.",
+              "title": "Can I migrate my existing website?",
+              "description": "Yes, we offer free migration assistance for new customers. Our support team will help you transfer your data and configure your services to sycords seamlessly.",
               "highlighted": false
             },
             {
-              "title": "Can I bring my own domain?",
-              "description": "Absolutely. Custom domains are supported on all plans, including Hobby, with automated SSL certificates.",
+              "title": "What payment methods do you accept?",
+              "description": "We accept all major credit cards, including Visa, MasterCard, American Express, and Discover. We also support PayPal for convenient payments.",
+              "highlighted": false
+            },
+            {
+              "title": "Do you offer a money-back guarantee?",
+              "description": "Yes, we offer a 30-day money-back guarantee on all our hosting plans. If you're not satisfied, we'll refund your purchase, no questions asked.",
+              "highlighted": false
+            }
+          ]
+        },
+        {
+          "kind": "cta",
+          "variant": "banner"
+        }
+      ]
+    },
+    {
+      "path": "/features",
+      "title": "sycords Features - Powerful Hosting Capabilities",
+      "metaTitle": "Features | sycords Cloud Hosting",
+      "metaDescription": "Explore sycords' robust features including instant deployments, advanced security, global scalability, and comprehensive monitoring for your projects.",
+      "sections": [
+        {
+          "kind": "hero",
+          "variant": "centered"
+        },
+        {
+          "kind": "feature-grid",
+          "variant": "alternating",
+          "items": [
+            {
+              "title": "Instant Deployments",
+              "description": "Launch your applications with unparalleled speed using our optimized deployment pipelines and 1-click integrations. Focus on coding, not infrastructure.",
+              "highlighted": false
+            },
+            {
+              "title": "Robust Security Measures",
+              "description": "Protect your data with enterprise-grade firewalls, DDoS mitigation, regular backups, and free SSL certificates. Your security is our top priority.",
+              "highlighted": false
+            },
+            {
+              "title": "Global Scalability",
+              "description": "Expand your reach and handle traffic spikes effortlessly. Our global network of data centers ensures low latency and high availability for your users worldwide.",
+              "highlighted": false
+            },
+            {
+              "title": "Comprehensive Monitoring",
+              "description": "Keep a close eye on your server performance with real-time analytics and customizable alerts. Stay informed and proactive about your infrastructure.",
+              "highlighted": false
+            }
+          ]
+        },
+        {
+          "kind": "process",
+          "variant": "steps",
+          "items": [
+            {
+              "title": "Choose Your Plan",
+              "description": "Select the hosting package that best fits your project's resource requirements and budget from our flexible options.",
+              "eyebrow": "Step 01",
+              "highlighted": false
+            },
+            {
+              "title": "Deploy Your Application",
+              "description": "Use our intuitive dashboard or API to deploy your code, databases, and services in minutes, with full control.",
+              "eyebrow": "Step 02",
+              "highlighted": false
+            },
+            {
+              "title": "Go Live & Scale",
+              "description": "Launch your project to the world with confidence and scale resources up or down effortlessly as your needs evolve.",
+              "eyebrow": "Step 03",
+              "highlighted": false
+            }
+          ]
+        },
+        {
+          "kind": "cta",
+          "variant": "boxed-card"
+        }
+      ]
+    },
+    {
+      "path": "/pricing",
+      "title": "sycords Pricing - Transparent Hosting Plans",
+      "metaTitle": "Pricing | sycords Cloud Hosting",
+      "metaDescription": "Explore sycords' simple and predictable hosting plans. Find the perfect package for your personal project or enterprise application with no hidden fees.",
+      "sections": [
+        {
+          "kind": "hero",
+          "variant": "centered"
+        },
+        {
+          "kind": "pricing",
+          "variant": "three-tier",
+          "items": [
+            {
+              "title": "Starter",
+              "price": "$9",
+              "period": "month",
+              "features": [
+                "1 vCPU",
+                "2GB RAM",
+                "50GB SSD Storage",
+                "1TB Data Transfer",
+                "Basic DDoS Protection",
+                "24/7 Email Support"
+              ],
+              "highlighted": false
+            },
+            {
+              "title": "Pro",
+              "price": "$29",
+              "period": "month",
+              "features": [
+                "4 vCPU",
+                "8GB RAM",
+                "200GB SSD Storage",
+                "5TB Data Transfer",
+                "Advanced Security Suite",
+                "Global CDN Access",
+                "Priority Chat Support",
+                "Free Migrations"
+              ],
+              "highlighted": true
+            },
+            {
+              "title": "Enterprise",
+              "price": "$99",
+              "period": "month",
+              "features": [
+                "8+ vCPU",
+                "32+ GB RAM",
+                "1TB+ SSD Storage",
+                "Unlimited Data Transfer",
+                "Dedicated Firewall",
+                "Custom Network Configuration",
+                "24/7 Dedicated Account Manager",
+                "99.99% SLA Guarantee"
+              ],
+              "highlighted": false
+            }
+          ]
+        },
+        {
+          "kind": "faq",
+          "variant": "two-column",
+          "items": [
+            {
+              "title": "What is a vCPU?",
+              "description": "A vCPU (virtual Central Processing Unit) represents a share of a physical CPU, providing dedicated processing power for your server instance.",
+              "highlighted": false
+            },
+            {
+              "title": "Are there any setup fees?",
+              "description": "No, sycords does not charge any setup fees. You only pay for your chosen hosting plan, with clear and upfront pricing.",
+              "highlighted": false
+            },
+            {
+              "title": "Can I upgrade or downgrade my plan?",
+              "description": "Yes, you can easily upgrade or downgrade your hosting plan at any time directly from your dashboard. Changes are applied instantly.",
+              "highlighted": false
+            },
+            {
+              "title": "What's included in 'Data Transfer'?",
+              "description": "Data transfer refers to the total amount of data moved in and out of your server. Our plans include generous allowances, and overage fees are transparent.",
+              "highlighted": false
+            },
+            {
+              "title": "Do you offer custom enterprise solutions?",
+              "description": "Absolutely. For large-scale projects or specific requirements, please contact our sales team for a tailored enterprise solution that fits your needs.",
+              "highlighted": false
+            }
+          ]
+        },
+        {
+          "kind": "cta",
+          "variant": "banner"
+        }
+      ]
+    },
+    {
+      "path": "/contact",
+      "title": "Contact sycords - Get Support & Sales Help",
+      "metaTitle": "Contact Us | sycords Cloud Hosting Support",
+      "metaDescription": "Have questions or need assistance? Contact sycords support and sales team via form, email, or phone. We're here to help you succeed.",
+      "sections": [
+        {
+          "kind": "hero",
+          "variant": "centered"
+        },
+        {
+          "kind": "contact",
+          "variant": "split-form",
+          "description": "Fill out the form below and our team will get back to you as soon as possible."
+        },
+        {
+          "kind": "faq",
+          "variant": "accordion",
+          "items": [
+            {
+              "title": "How quickly do you respond to support tickets?",
+              "description": "Our support team aims to respond to all inquiries within 2-4 hours during business hours, and critical issues are addressed immediately 24/7.",
+              "highlighted": false
+            },
+            {
+              "title": "Where can I find documentation?",
+              "description": "Our comprehensive documentation and knowledge base are available at docs.sycords.com, covering everything from setup to advanced configurations.",
+              "highlighted": false
+            },
+            {
+              "title": "Do you offer phone support?",
+              "description": "Phone support is available for Pro and Enterprise plan customers during business hours. Email and chat support are available for all plans.",
               "highlighted": false
             }
           ]
@@ -408,14 +537,157 @@ export const generatedManifest = {
       ]
     },
     {
-      "path": "/login",
-      "title": "Sign In",
-      "metaTitle": "Sign In to Sycords",
-      "metaDescription": "Access your Sycords dashboard to manage deployments, billing, and team settings.",
+      "path": "/dashboard",
+      "title": "sycords Dashboard - Your Hosting Control Panel",
+      "metaTitle": "Dashboard | sycords Account Overview",
+      "metaDescription": "Welcome to your sycords dashboard. Manage your servers, billing, domains, and support tickets from one central location.",
       "sections": [
         {
-          "kind": "contact",
-          "variant": "split-form"
+          "kind": "hero",
+          "variant": "centered"
+        },
+        {
+          "kind": "stats",
+          "variant": "card-row",
+          "items": [
+            {
+              "label": "Servers Online",
+              "value": "3",
+              "highlighted": false
+            },
+            {
+              "label": "Disk Space Used",
+              "value": "75",
+              "suffix": "%",
+              "highlighted": false
+            },
+            {
+              "label": "Active Domains",
+              "value": "2",
+              "highlighted": false
+            },
+            {
+              "label": "Support Ticket Open",
+              "value": "1",
+              "highlighted": false
+            }
+          ]
+        },
+        {
+          "kind": "feature-grid",
+          "variant": "cards",
+          "items": [
+            {
+              "title": "Server Management",
+              "description": "Control your virtual servers, view metrics, and manage configurations.",
+              "href": "/dashboard/server-management",
+              "highlighted": false,
+              "category": "Go to Server Management"
+            },
+            {
+              "title": "Billing & Invoices",
+              "description": "Review your subscriptions, payment history, and update billing details.",
+              "href": "/dashboard/billing",
+              "highlighted": false,
+              "category": "Manage Billing"
+            },
+            {
+              "title": "Domain Management",
+              "description": "Connect and manage your domains, DNS settings, and SSL certificates.",
+              "href": "/dashboard/domains",
+              "highlighted": false,
+              "category": "Configure Domains"
+            },
+            {
+              "title": "Support Tickets",
+              "description": "Open new support requests or check the status of existing ones.",
+              "href": "/dashboard/support",
+              "highlighted": false,
+              "category": "Get Help"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "path": "/dashboard/server-management",
+      "title": "sycords Server Management - Control Your Servers",
+      "metaTitle": "Server Management | sycords Dashboard",
+      "metaDescription": "Access full control over your sycords virtual servers. Monitor resources, manage power, configure network settings, and handle backups.",
+      "sections": [
+        {
+          "kind": "hero",
+          "variant": "centered"
+        },
+        {
+          "kind": "stats",
+          "variant": "card-row",
+          "items": [
+            {
+              "label": "CPU Usage",
+              "value": "12",
+              "suffix": "%",
+              "highlighted": false
+            },
+            {
+              "label": "RAM Used",
+              "value": "4GB",
+              "highlighted": false
+            },
+            {
+              "label": "Disk Usage",
+              "value": "25",
+              "suffix": "%",
+              "highlighted": false
+            },
+            {
+              "label": "Network In/Out",
+              "value": "200Mbps",
+              "highlighted": false
+            }
+          ]
+        },
+        {
+          "kind": "feature-grid",
+          "variant": "cards",
+          "items": [
+            {
+              "title": "Resource Usage",
+              "description": "Monitor CPU, RAM, and disk usage in real-time with detailed graphs.",
+              "highlighted": false,
+              "category": "View Metrics"
+            },
+            {
+              "title": "Power Controls",
+              "description": "Start, stop, or restart your server instance securely with a single click.",
+              "highlighted": false,
+              "category": "Control Server"
+            },
+            {
+              "title": "Backups & Snapshots",
+              "description": "Create and restore backups, or take instant server snapshots for recovery.",
+              "highlighted": false,
+              "category": "Manage Backups"
+            },
+            {
+              "title": "Network & Firewall",
+              "description": "Configure network interfaces, IP addresses, and firewall rules for security.",
+              "highlighted": false,
+              "category": "Configure Network"
+            },
+            {
+              "title": "Operating System",
+              "description": "Reinstall OS or access console for advanced troubleshooting and customization.",
+              "highlighted": false,
+              "category": "OS Settings"
+            },
+            {
+              "title": "SSH Access",
+              "description": "Generate SSH keys and manage remote access to your server securely.",
+              "highlighted": false,
+              "category": "Manage SSH"
+            }
+          ]
         }
       ]
     }
@@ -427,7 +699,7 @@ export const generatedManifest = {
       "kind": "database",
       "name": "Turso",
       "provider": "turso",
-      "reason": "Store user accounts, deployment metadata, and billing states.",
+      "reason": "To store user accounts, server configurations, billing information, and other persistent application data.",
       "envVars": [
         "TURSO_DATABASE_URL",
         "TURSO_AUTH_TOKEN"
@@ -437,7 +709,7 @@ export const generatedManifest = {
       "kind": "auth",
       "name": "Clerk",
       "provider": "clerk",
-      "reason": "Secure user authentication, session management, and team roles.",
+      "reason": "For secure user authentication, login, and session management for the dashboard.",
       "envVars": [
         "CLERK_PUBLISHABLE_KEY",
         "CLERK_SECRET_KEY"
@@ -447,7 +719,7 @@ export const generatedManifest = {
       "kind": "payments",
       "name": "Stripe",
       "provider": "stripe",
-      "reason": "Manage recurring subscriptions and usage-based billing for hosting.",
+      "reason": "To handle subscription billing, one-time payments for hosting plans, and manage customer invoices.",
       "envVars": [
         "STRIPE_SECRET_KEY",
         "STRIPE_WEBHOOK_SECRET"
@@ -457,7 +729,7 @@ export const generatedManifest = {
       "kind": "email",
       "name": "Resend",
       "provider": "resend",
-      "reason": "Send deployment alerts, billing receipts, and authentication emails.",
+      "reason": "For sending transactional emails such as account confirmations, password resets, billing notifications, and support updates.",
       "envVars": [
         "RESEND_API_KEY"
       ]
@@ -466,49 +738,49 @@ export const generatedManifest = {
   "requiredEnvVars": [
     {
       "key": "TURSO_DATABASE_URL",
-      "purpose": "Turso — Store user accounts, deployment metadata, and billing states.",
+      "purpose": "Turso — To store user accounts, server configurations, billing information, and other persistent application data.",
       "provider": "turso",
       "required": true,
       "integration": "Turso"
     },
     {
       "key": "TURSO_AUTH_TOKEN",
-      "purpose": "Turso — Store user accounts, deployment metadata, and billing states.",
+      "purpose": "Turso — To store user accounts, server configurations, billing information, and other persistent application data.",
       "provider": "turso",
       "required": true,
       "integration": "Turso"
     },
     {
       "key": "CLERK_PUBLISHABLE_KEY",
-      "purpose": "Clerk — Secure user authentication, session management, and team roles.",
+      "purpose": "Clerk — For secure user authentication, login, and session management for the dashboard.",
       "provider": "clerk",
       "required": true,
       "integration": "Clerk"
     },
     {
       "key": "CLERK_SECRET_KEY",
-      "purpose": "Clerk — Secure user authentication, session management, and team roles.",
+      "purpose": "Clerk — For secure user authentication, login, and session management for the dashboard.",
       "provider": "clerk",
       "required": true,
       "integration": "Clerk"
     },
     {
       "key": "STRIPE_SECRET_KEY",
-      "purpose": "Stripe — Manage recurring subscriptions and usage-based billing for hosting.",
+      "purpose": "Stripe — To handle subscription billing, one-time payments for hosting plans, and manage customer invoices.",
       "provider": "stripe",
       "required": true,
       "integration": "Stripe"
     },
     {
       "key": "STRIPE_WEBHOOK_SECRET",
-      "purpose": "Stripe — Manage recurring subscriptions and usage-based billing for hosting.",
+      "purpose": "Stripe — To handle subscription billing, one-time payments for hosting plans, and manage customer invoices.",
       "provider": "stripe",
       "required": true,
       "integration": "Stripe"
     },
     {
       "key": "RESEND_API_KEY",
-      "purpose": "Resend — Send deployment alerts, billing receipts, and authentication emails.",
+      "purpose": "Resend — For sending transactional emails such as account confirmations, password resets, billing notifications, and support updates.",
       "provider": "resend",
       "required": true,
       "integration": "Resend"
